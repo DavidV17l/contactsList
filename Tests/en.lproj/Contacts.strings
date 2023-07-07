@@ -1,0 +1,60 @@
+
+/* Class = "UIButton"; configuration.title = "Create"; ObjectID = "51a-av-M9L"; */
+"51a-av-M9L.configuration.title" = "Create";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "51a-av-M9L"; */
+"51a-av-M9L.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Section"; ObjectID = "6U7-J1-x4I"; */
+"6U7-J1-x4I.placeholder" = "Section";
+
+/* Class = "UILabel"; text = "Email address"; ObjectID = "6bv-ob-AIo"; */
+"6bv-ob-AIo.text" = "Email address";
+
+/* Class = "UILabel"; text = "Number"; ObjectID = "94v-41-bvj"; */
+"94v-41-bvj.text" = "Number";
+
+/* Class = "UITextField"; placeholder = "Full name"; ObjectID = "D0P-1W-GAA"; */
+"D0P-1W-GAA.placeholder" = "Full name";
+
+/* Class = "UILabel"; text = "Number"; ObjectID = "EcV-iU-YbK"; */
+"EcV-iU-YbK.text" = "Number";
+
+/* Class = "UINavigationItem"; title = "Add Contact"; ObjectID = "Kos-pF-8gq"; */
+"Kos-pF-8gq.title" = "Add Contact";
+
+/* Class = "UITextField"; placeholder = "Number"; ObjectID = "Ovj-fD-jOn"; */
+"Ovj-fD-jOn.placeholder" = "Number";
+
+/* Class = "UIButton"; configuration.title = "Call"; ObjectID = "PHI-yC-POM"; */
+"PHI-yC-POM.configuration.title" = "Call";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PHI-yC-POM"; */
+"PHI-yC-POM.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Full name"; ObjectID = "bP2-Ma-KSO"; */
+"bP2-Ma-KSO.text" = "Full name";
+
+/* Class = "UILabel"; text = "Full name"; ObjectID = "lBW-bS-uf8"; */
+"lBW-bS-uf8.text" = "Full name";
+
+/* Class = "UIButton"; configuration.title = "Send"; ObjectID = "ov8-Q2-2M5"; */
+"ov8-Q2-2M5.configuration.title" = "Send";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ov8-Q2-2M5"; */
+"ov8-Q2-2M5.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Contact List"; ObjectID = "tHo-n5-mhw"; */
+"tHo-n5-mhw.title" = "Contact List";
+
+/* Class = "UILabel"; text = "Email address"; ObjectID = "wkO-2F-CKr"; */
+"wkO-2F-CKr.text" = "Email address";
+
+/* Class = "UIButton"; configuration.title = "Choose"; ObjectID = "yPC-3a-2bK"; */
+"yPC-3a-2bK.configuration.title" = "Choose";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "yPC-3a-2bK"; */
+"yPC-3a-2bK.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Email address"; ObjectID = "zDC-4V-zyY"; */
+"zDC-4V-zyY.placeholder" = "Email address";

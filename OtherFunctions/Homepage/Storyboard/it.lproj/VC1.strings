@@ -1,0 +1,24 @@
+
+/* Class = "UIButton"; configuration.title = "TableView"; ObjectID = "54g-FI-j8V"; */
+"54g-FI-j8V.configuration.title" = "TableView";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "54g-FI-j8V"; */
+"54g-FI-j8V.normalTitle" = "TableView";
+
+/* Class = "UIButton"; configuration.title = "OK"; ObjectID = "AFL-mF-yPF"; */
+"AFL-mF-yPF.configuration.title" = "OK";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "AFL-mF-yPF"; */
+"AFL-mF-yPF.normalTitle" = "TableView2";
+
+/* Class = "UITextField"; placeholder = "Scrivi qualcosa..."; ObjectID = "JBd-iA-1VZ"; */
+"JBd-iA-1VZ.placeholder" = "Scrivi qualcosa...";
+
+/* Class = "UILabel"; text = "Schermata di prova"; ObjectID = "SaT-7P-kQV"; */
+"SaT-7P-kQV.text" = "Schermata di prova";
+
+/* Class = "UIButton"; configuration.title = "TableView2"; ObjectID = "T1c-MW-rzr"; */
+"T1c-MW-rzr.configuration.title" = "TableView2";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "T1c-MW-rzr"; */
+"T1c-MW-rzr.normalTitle" = "OK";

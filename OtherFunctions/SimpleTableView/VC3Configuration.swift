@@ -1,4 +1,4 @@
-//
+// Test GitHub Commit
 //  VC3Configuration.swift
 //  Tests
 //

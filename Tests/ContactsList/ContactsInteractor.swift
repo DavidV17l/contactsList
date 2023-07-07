@@ -1,8 +1,9 @@
 import UIKit
 
 protocol ContactsBusinessLogic {
-    func displayTable() -> [Contact]
+    func displayTable()
     var contacts: ContactList? { get set }
+    var contactsList: [Contact] { get set }
 }
 
 protocol ContactsDataStore {}
@@ -15,12 +16,11 @@ class ContactsInteractor: ContactsBusinessLogic, ContactsDataStore {
     
     init (viewController: ContactsDisplayLogic?) {
         self.viewController = viewController
-        self.contacts = ContactList(friends: [], colleagues: [], family: [])
         self.contactsList = []
+        self.initializer()
     }
     
-    internal func displayTable() -> [Contact]{
-        
+    internal func initializer() {
         let friends = [
             Contact(name: "Bob", email: "Bob@gmail.com", number: "349000000", section: Section.friends),
             Contact(name: "Tom", email: "Tom@myspace.com", number: "349000001", section: Section.friends)
@@ -34,14 +34,16 @@ class ContactsInteractor: ContactsBusinessLogic, ContactsDataStore {
             Contact(name: "Dad", email: "dad@aol.com", number: "349000003", section: Section.family)
         ]
         
-        let contactList = ContactList(friends: friends, colleagues: colleagues, family: family)
-        viewController?.update(with: contactList, animate: true)
-        contacts = contactList
+        contacts = ContactList(friends: friends, colleagues: colleagues, family: family)
+        
         contactsList.append(contentsOf: friends)
         contactsList.append(contentsOf: colleagues)
         contactsList.append(contentsOf: family)
-        
-        return contactsList
+    }
+    
+    internal func displayTable(){
+        guard let contactsUpdateList = contacts else { return }
+        viewController?.update(with: contactsUpdateList, animate: true)
     }
 }
 

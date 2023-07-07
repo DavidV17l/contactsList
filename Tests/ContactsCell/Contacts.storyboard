@@ -17,14 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eLv-UI-B27">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eLv-UI-B27">
                                 <rect key="frame" x="0.0" y="47" width="375" height="731"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eLv-UI-B27" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BsC-n4-jm4"/>
+                            <constraint firstItem="eLv-UI-B27" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="opZ-d8-aXs"/>
+                            <constraint firstItem="eLv-UI-B27" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="pO1-sd-pZz"/>
+                            <constraint firstItem="eLv-UI-B27" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="47" id="zgI-w6-bHg"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Contact List" style="editor" id="tHo-n5-mhw"/>
                     <connections>
@@ -153,18 +158,24 @@
                                     <action selector="addButtonPressed:" destination="206-FE-wL8" eventType="touchUpInside" id="CTp-ai-qLM"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EpC-H6-6T0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EpC-H6-6T0">
                                 <rect key="frame" x="0.0" y="91" width="375" height="644"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FG4-LF-fLF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="51a-av-M9L" firstAttribute="top" secondItem="EpC-H6-6T0" secondAttribute="bottom" constant="8" symbolic="YES" id="3E2-uf-CED"/>
+                            <constraint firstItem="EpC-H6-6T0" firstAttribute="leading" secondItem="FG4-LF-fLF" secondAttribute="leading" id="4a6-1r-rBG"/>
                             <constraint firstItem="FG4-LF-fLF" firstAttribute="trailing" secondItem="51a-av-M9L" secondAttribute="trailing" constant="16" id="5OZ-dC-bxD"/>
+                            <constraint firstItem="EpC-H6-6T0" firstAttribute="top" secondItem="FG4-LF-fLF" secondAttribute="top" id="HFP-9r-N3D"/>
                             <constraint firstItem="51a-av-M9L" firstAttribute="leading" secondItem="FG4-LF-fLF" secondAttribute="leading" constant="16" id="S8M-sA-ZlA"/>
+                            <constraint firstItem="EpC-H6-6T0" firstAttribute="centerX" secondItem="51a-av-M9L" secondAttribute="centerX" id="VuX-ky-kwI"/>
+                            <constraint firstItem="51a-av-M9L" firstAttribute="leading" secondItem="FG4-LF-fLF" secondAttribute="leading" constant="16" id="kwi-J4-I6g"/>
+                            <constraint firstItem="FG4-LF-fLF" firstAttribute="trailing" secondItem="51a-av-M9L" secondAttribute="trailing" constant="16" id="lIe-hq-x89"/>
                             <constraint firstItem="51a-av-M9L" firstAttribute="bottom" secondItem="FG4-LF-fLF" secondAttribute="bottom" id="uBD-fK-Jfc"/>
+                            <constraint firstItem="51a-av-M9L" firstAttribute="bottom" secondItem="FG4-LF-fLF" secondAttribute="bottom" id="xAV-Dd-Qdw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Contact" id="Kos-pF-8gq"/>

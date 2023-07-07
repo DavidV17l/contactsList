@@ -2,8 +2,29 @@
   Localizable.strings
   Tests
 
-  Created by davide on 01/07/23.
+  Created by davide on 10/07/23.
   
 */
 
+"AddButton" = "Add";
 
+"FriendsSection" = "Friends";
+"ColleaguesSection" = "Colleagues";
+"FamilySection" = "Family";
+"Undefined" = "Undefined";
+
+"Delete" = "Delete";
+"Edit" = "Edit";
+"Error" = "error";
+
+"FullName" = "Full name";
+"Email" = "Email address";
+"Number" = "Number";
+"Section" = "Section";
+
+"Take" = "Take Photo";
+"Choose" = "Choose Photo";
+"Cancel" = "Cancel";
+
+"Warning" = "Warning";
+"OK" = "OK";

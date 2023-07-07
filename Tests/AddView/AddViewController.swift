@@ -43,7 +43,7 @@ class AddViewController: UIViewController, IAddViewDisplayLogic, UITableViewDele
                 case 1: cell.textField.text = selectedContact.email
                 case 2: cell.textField.text = selectedContact.number
                 case 3: cell.textField.text = "\(selectedContact.section)"
-                default: cell.textField.placeholder = "Error -.-"
+                default: cell.textField.placeholder = NSLocalizedString("Error", comment: "ErrorString")
                 }
                 
                 cell.textField.tag = indexPath.row
@@ -55,11 +55,11 @@ class AddViewController: UIViewController, IAddViewDisplayLogic, UITableViewDele
             if let cell = tableView.dequeueReusableCell(withIdentifier: AddCell.identifier) as? AddCell
             {
                 switch indexPath.row {
-                case 0: cell.textField.placeholder = "Full name"
-                case 1: cell.textField.placeholder = "Email address"
-                case 2: cell.textField.placeholder = "Number"
-                case 3: cell.textField.placeholder = "Section"
-                default: cell.textField.placeholder = "Error -.-"
+                case 0: cell.textField.placeholder = NSLocalizedString("FullName", comment: "Localization")
+                case 1: cell.textField.placeholder = NSLocalizedString("Email", comment: "Localization")
+                case 2: cell.textField.placeholder = NSLocalizedString("Number", comment: "Localization")
+                case 3: cell.textField.placeholder = NSLocalizedString("Section", comment: "Localization")
+                default: cell.textField.placeholder = NSLocalizedString("Error", comment: "ErrorString")
                 }
                 
                 cell.textField.tag = indexPath.row
@@ -73,7 +73,8 @@ class AddViewController: UIViewController, IAddViewDisplayLogic, UITableViewDele
     
     @IBAction func addButtonPressed(_ sender: Any) {
         if editMode == true {
-            viewController?.editedContact = Contact(name: name, email: email, number: number, section: Section(rawValue: section)!)
+            guard let sectionGuarded = Section(rawValue: section) else { return }
+            viewController?.editedContact = Contact(name: name, email: email, number: number, section: sectionGuarded)
         } else {
             callback?([name, email, number, section])
         }
@@ -90,15 +91,17 @@ class AddViewController: UIViewController, IAddViewDisplayLogic, UITableViewDele
     
     @objc func valueChanged(_ textField: UITextField){
         
+        guard let text = textField.text else { return }
+        
         switch textField.tag {
         case 0:
-            name = textField.text!
+            name = text
         case 1:
-            email = textField.text!
+            email = text
         case 2:
-            number = textField.text!
+            number = text
         case 3:
-            section = textField.text!
+            section = text
         default:
             break
         }

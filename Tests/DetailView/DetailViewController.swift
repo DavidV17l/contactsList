@@ -16,16 +16,17 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     
     var imagePicker = UIImagePickerController()
     
-    var selectedContact: Contact!
+    var selectedContact: Contact?
     var selectedSection: Section?
     
     // MARK: - Initializers
     override func viewDidLoad() {
         super.viewDidLoad()
-        fullNameLabel.text = selectedContact.name
-        numberLabel.text = selectedContact.number
-        mailLabel.text = selectedContact.email
-        profileImage.image = selectedContact.profileImage
+        guard let selectedContactGuarded = selectedContact else { return }
+        fullNameLabel.text = selectedContactGuarded.name
+        numberLabel.text = selectedContactGuarded.number
+        mailLabel.text = selectedContactGuarded.email
+        profileImage.image = selectedContactGuarded.profileImage
     }
     
     override func viewDidLayoutSubviews() {
@@ -39,13 +40,13 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     // MARK: - Profile Picture Logic
     @IBAction func imagePickerClicked(_ sender: UIButton) {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Take", comment: ""), style: .default, handler: { _ in
             self.openCamera()
         }))
-        alert.addAction(UIAlertAction(title: "Choose Photo", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Choose", comment: ""), style: .default, handler: { _ in
             self.openGallary()
         }))
-        alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction.init(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
         switch UIDevice.current.userInterfaceIdiom {
         case .pad:
             alert.popoverPresentationController?.sourceView = sender
@@ -70,8 +71,8 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
             self.present(imagePicker, animated: true, completion: nil)
         }
         else{
-            let alert  = UIAlertController(title: "Warning", message: "Error in the camera app", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            let alert  = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("Error", comment: "ErrorString"), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "OkayString"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
     }
@@ -93,7 +94,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
             try? jpegData.write(to: imagePath)
         }
         profileImage.image = image
-        selectedContact.profileImage = image
+        selectedContact!.profileImage = image
         dismiss(animated: true)
     }
 

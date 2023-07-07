@@ -17,7 +17,6 @@
 		6B6CEE522A541AEA00935DB5 /* AddViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6CEE4E2A541AEA00935DB5 /* AddViewRouter.swift */; };
 		6B6CEE542A541AEA00935DB5 /* AddViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6CEE502A541AEA00935DB5 /* AddViewInteractor.swift */; };
 		6B7459A82A4F47BA00613299 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7459A72A4F47BA00613299 /* AddViewController.swift */; };
-		6B7459AE2A504BAD00613299 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B7459B02A504BAD00613299 /* Localizable.strings */; };
 		6B7459B92A50513800613299 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7459B82A50513800613299 /* DetailViewController.swift */; };
 		6B83B4872A4ACD4A002D894B /* SwinjectAutoregistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B83B4862A4ACD4A002D894B /* SwinjectAutoregistration.swift */; };
 		6B8475422A45953600EBA41A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8475412A45953600EBA41A /* AppDelegate.swift */; };
@@ -34,6 +33,7 @@
 		6B84757B2A45CAA200EBA41A /* VC2Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8475772A45CAA200EBA41A /* VC2Interactor.swift */; };
 		6B84757D2A45CD7500EBA41A /* VC1Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84757C2A45CD7500EBA41A /* VC1Interactor.swift */; };
 		6B84757F2A45CD9800EBA41A /* VC1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B84757E2A45CD9800EBA41A /* VC1ViewController.swift */; };
+		6B9CA9792A5C7AAB00597309 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B9CA97B2A5C7AAB00597309 /* Localizable.strings */; };
 		6BAE615C2A4D7DF800DB7ED6 /* ContactsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE615B2A4D7DF800DB7ED6 /* ContactsModels.swift */; };
 		6BAE61602A4D802C00DB7ED6 /* ContactsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAE615E2A4D802C00DB7ED6 /* ContactsCell.swift */; };
 		6BE03EB12A4B051000484E91 /* VC1Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE03EB02A4B051000484E91 /* VC1Models.swift */; };
@@ -67,9 +67,6 @@
 		6B6CEE502A541AEA00935DB5 /* AddViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewInteractor.swift; sourceTree = "<group>"; };
 		6B7459A72A4F47BA00613299 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		6B7459AB2A504B6300613299 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/VC1.strings; sourceTree = "<group>"; };
-		6B7459AC2A504B6300613299 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		6B7459AF2A504BAD00613299 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		6B7459B12A504BB300613299 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6B7459B82A50513800613299 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6B83B4862A4ACD4A002D894B /* SwinjectAutoregistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwinjectAutoregistration.swift; sourceTree = "<group>"; };
 		6B84753E2A45953600EBA41A /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +85,8 @@
 		6B8475772A45CAA200EBA41A /* VC2Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC2Interactor.swift; sourceTree = "<group>"; };
 		6B84757C2A45CD7500EBA41A /* VC1Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC1Interactor.swift; sourceTree = "<group>"; };
 		6B84757E2A45CD9800EBA41A /* VC1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VC1ViewController.swift; sourceTree = "<group>"; };
+		6B9CA97A2A5C7AAB00597309 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6B9CA97C2A5C7AAF00597309 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6BAE615B2A4D7DF800DB7ED6 /* ContactsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsModels.swift; sourceTree = "<group>"; };
 		6BAE615E2A4D802C00DB7ED6 /* ContactsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCell.swift; sourceTree = "<group>"; };
 		6BE03EB02A4B051000484E91 /* VC1Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VC1Models.swift; sourceTree = "<group>"; };
@@ -150,7 +149,7 @@
 		6B7459AD2A504B9000613299 /* LocalizationString */ = {
 			isa = PBXGroup;
 			children = (
-				6B7459B02A504BAD00613299 /* Localizable.strings */,
+				6B9CA97B2A5C7AAB00597309 /* Localizable.strings */,
 			);
 			path = LocalizationString;
 			sourceTree = "<group>";
@@ -394,7 +393,7 @@
 				6BE03ED12A4C486D00484E91 /* TableViewCell.xib in Resources */,
 				6BE03EC32A4C1ADD00484E91 /* VC3.storyboard in Resources */,
 				6B2DAD892A557D2B0013453F /* AddCell.xib in Resources */,
-				6B7459AE2A504BAD00613299 /* Localizable.strings in Resources */,
+				6B9CA9792A5C7AAB00597309 /* Localizable.strings in Resources */,
 				6B8475652A45A66700EBA41A /* VC2.storyboard in Resources */,
 				6B6CEE442A5419BC00935DB5 /* ContactsCell.xib in Resources */,
 				6B84754B2A45953600EBA41A /* Assets.xcassets in Resources */,
@@ -491,15 +490,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6B7459B02A504BAD00613299 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6B7459AF2A504BAD00613299 /* en */,
-				6B7459B12A504BB300613299 /* it */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
 		6B8475472A45953600EBA41A /* VC1.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -513,9 +503,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				6B84754D2A45953600EBA41A /* Base */,
-				6B7459AC2A504B6300613299 /* it */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		6B9CA97B2A5C7AAB00597309 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B9CA97A2A5C7AAB00597309 /* en */,
+				6B9CA97C2A5C7AAF00597309 /* it */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

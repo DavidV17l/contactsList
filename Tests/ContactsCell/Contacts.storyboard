@@ -111,7 +111,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add Contact" id="Kos-pF-8gq"/>
                     <connections>
-                        <outlet property="createButton" destination="51a-av-M9L" id="MXJ-df-U5y"/>
+                        <outlet property="createButton" destination="51a-av-M9L" id="ciH-EQ-3Xc"/>
                         <outlet property="tableForm" destination="EpC-H6-6T0" id="DYS-eZ-whO"/>
                     </connections>
                 </viewController>

@@ -15,7 +15,7 @@
 
 "Delete" = "Delete";
 "Edit" = "Edit";
-"Error" = "error";
+"Error" = "Error";
 
 "FullName" = "Full name";
 "Email" = "Email address";
@@ -31,3 +31,5 @@
 
 "Send" = "Send";
 "Call" = "Call";
+
+"Fields" = "Fill all fields";

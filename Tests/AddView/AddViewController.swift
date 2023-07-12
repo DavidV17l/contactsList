@@ -72,13 +72,19 @@ class AddViewController: UIViewController, IAddViewDisplayLogic, UITableViewDele
     }
     
     @IBAction func addButtonPressed(_ sender: Any) {
-        if editMode == true {
-            guard let sectionGuarded = Section(rawValue: section) else { return }
-            viewController?.editedContact = Contact(name: name, email: email, number: number, section: sectionGuarded)
+        if name.isEmpty || email.isEmpty || number.isEmpty || section.isEmpty {
+            let alert: UIAlertController = UIAlertController(title: NSLocalizedString("Error", comment: ""), message: NSLocalizedString("Fields", comment: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .cancel, handler:  nil))
+            self.present(alert, animated: true, completion: nil)
         } else {
-            callback?([name, email, number, section])
+            if editMode == true {
+                guard let sectionGuarded = Section(rawValue: section) else { return }
+                viewController?.editedContact = Contact(name: name, email: email, number: number, section: sectionGuarded)
+            } else {
+                callback?([name, email, number, section])
+            }
+            navigationController?.popViewController(animated: true)
         }
-        navigationController?.popViewController(animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

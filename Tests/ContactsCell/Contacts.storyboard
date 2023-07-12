@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="500" y="-166"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Contact Detail-->
         <scene sceneID="KnR-Fy-VED">
             <objects>
                 <viewController storyboardIdentifier="handleDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X6H-pa-p0J" customClass="DetailViewController" customModule="Tests" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,92 +50,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBW-bS-uf8">
-                                <rect key="frame" x="16" y="231" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94v-41-bvj">
-                                <rect key="frame" x="16" y="323" width="343" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkO-2F-CKr">
-                                <rect key="frame" x="16" y="420" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bP2-Ma-KSO">
-                                <rect key="frame" x="16" y="202" width="73" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcV-iU-YbK">
-                                <rect key="frame" x="16" y="294" width="62" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bv-ob-AIo">
-                                <rect key="frame" x="16" y="391" width="106" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHI-yC-POM">
-                                <rect key="frame" x="289" y="323" width="70" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Call"/>
-                                <connections>
-                                    <action selector="callButtonPressed:" destination="X6H-pa-p0J" eventType="touchUpInside" id="fD0-WT-Ons"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ov8-Q2-2M5">
-                                <rect key="frame" x="289" y="419" width="70" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Send">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="mailButtonPressed:" destination="X6H-pa-p0J" eventType="touchUpInside" id="IEr-aj-MVs"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPC-3a-2bK">
-                                <rect key="frame" x="232" y="123" width="127" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Choose"/>
-                                <connections>
-                                    <action selector="imagePickerClicked:" destination="X6H-pa-p0J" eventType="touchUpInside" id="QR9-p8-JWt"/>
-                                </connections>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p25-La-RcB">
-                                <rect key="frame" x="34" y="105" width="70" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="E1M-uV-kdQ">
+                                <rect key="frame" x="0.0" y="91" width="375" height="687"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bWQ-2a-UAS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="E1M-uV-kdQ" firstAttribute="trailing" secondItem="bWQ-2a-UAS" secondAttribute="trailing" id="7kL-Eb-abG"/>
+                            <constraint firstItem="E1M-uV-kdQ" firstAttribute="bottom" secondItem="bWQ-2a-UAS" secondAttribute="bottom" id="Mae-dj-rPh"/>
+                            <constraint firstItem="E1M-uV-kdQ" firstAttribute="leading" secondItem="bWQ-2a-UAS" secondAttribute="leading" id="cti-rd-pT3"/>
+                            <constraint firstItem="E1M-uV-kdQ" firstAttribute="top" secondItem="bWQ-2a-UAS" secondAttribute="top" id="pcE-ue-OXp"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="9Vd-4X-X16"/>
+                    <navigationItem key="navigationItem" title="Contact Detail" id="9Vd-4X-X16"/>
                     <connections>
-                        <outlet property="fullNameLabel" destination="lBW-bS-uf8" id="Z3h-FZ-MpJ"/>
-                        <outlet property="imagePickerButton" destination="yPC-3a-2bK" id="Y4p-CC-FGB"/>
-                        <outlet property="mailLabel" destination="wkO-2F-CKr" id="Vwx-d7-ZQc"/>
-                        <outlet property="numberLabel" destination="94v-41-bvj" id="Bsr-ff-tPN"/>
-                        <outlet property="profileImage" destination="p25-La-RcB" id="7PX-tP-ji6"/>
+                        <outlet property="detailTableView" destination="E1M-uV-kdQ" id="sjO-t9-CxM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enf-aw-3xk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

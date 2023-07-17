@@ -1,10 +1,3 @@
-//
-//  SwinjectAutoregistration.swift
-//  Tests
-//
-//  Created by davide on 27/06/23.
-//
-
 import Foundation
 import Swinject
 import SwinjectStoryboard
@@ -15,7 +8,7 @@ var assembler: Assembler!
 extension SwinjectStoryboard {
     @objc class func setup() {
 
-        let assemblies: [Assembly] = [VC1Assembly(), VC2Assembly(), VC3Assembly(), ContactsAssembly(), DetailViewAssembly(), AddViewAssembly()]
+        let assemblies: [Assembly] = [VC1Assembly(), VC2Assembly(), VC3Assembly(), ContactsAssembly(), DetailViewAssembly(), AddViewAssembly(), CatalogAssembly(), CatalogDetailAssembly()]
 
         assembler = Assembler(assemblies)
 
@@ -25,6 +18,8 @@ extension SwinjectStoryboard {
         ContactsConfigurator.setup(container: defaultContainer)
         DetailViewConfigurator.setup(container: defaultContainer)
         AddViewConfigurator.setup(container: defaultContainer)
+        CatalogConfigurator.setup(container: defaultContainer)
+        CatalogDetailConfigurator.setup(container: defaultContainer)
     }
 }
 

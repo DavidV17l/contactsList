@@ -1,10 +1,3 @@
-//
-//  DetailCell.swift
-//  Tests
-//
-//  Created by davide on 05/07/23.
-//
-
 import UIKit
 
 class AddCell: UITableViewCell {

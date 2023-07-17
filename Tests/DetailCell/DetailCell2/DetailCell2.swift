@@ -1,10 +1,3 @@
-//
-//  DetailCell2.swift
-//  Tests
-//
-//  Created by davide on 11/07/23.
-//
-
 import UIKit
 
 class DetailCell2: UITableViewCell {

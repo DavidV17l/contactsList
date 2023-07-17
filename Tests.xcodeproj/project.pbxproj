@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		6B2DAD882A557D2B0013453F /* AddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B2DAD862A557D2B0013453F /* AddCell.swift */; };
 		6B2DAD892A557D2B0013453F /* AddCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B2DAD872A557D2B0013453F /* AddCell.xib */; };
+		6B5B935A2A5EAC8100C56835 /* Catalog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5B93592A5EAC8100C56835 /* Catalog.storyboard */; };
+		6B5B93602A5EAF9200C56835 /* CatalogConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B935C2A5EAF9200C56835 /* CatalogConfiguration.swift */; };
+		6B5B93612A5EAF9200C56835 /* CatalogRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B935D2A5EAF9200C56835 /* CatalogRouter.swift */; };
+		6B5B93622A5EAF9200C56835 /* CatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B935E2A5EAF9200C56835 /* CatalogViewController.swift */; };
+		6B5B93632A5EAF9200C56835 /* CatalogInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B935F2A5EAF9200C56835 /* CatalogInteractor.swift */; };
+		6B5B93662A5EB07800C56835 /* CatalogModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B93652A5EB07800C56835 /* CatalogModels.swift */; };
+		6B5B936A2A5EB3DB00C56835 /* CatalogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B93682A5EB3DB00C56835 /* CatalogCell.swift */; };
+		6B5B93712A5EE13700C56835 /* CatalogDetailConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B936D2A5EE13700C56835 /* CatalogDetailConfiguration.swift */; };
+		6B5B93722A5EE13700C56835 /* CatalogDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B936E2A5EE13700C56835 /* CatalogDetailRouter.swift */; };
+		6B5B93732A5EE13700C56835 /* CatalogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B936F2A5EE13700C56835 /* CatalogDetailViewController.swift */; };
+		6B5B93742A5EE13700C56835 /* CatalogDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B93702A5EE13700C56835 /* CatalogDetailInteractor.swift */; };
+		6B5B937A2A61518200C56835 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B93792A61518200C56835 /* Cell.swift */; };
+		6B5B937C2A6158E300C56835 /* Cell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B937B2A6158E300C56835 /* Cell2.swift */; };
+		6B5B937E2A6158EC00C56835 /* Cell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B937D2A6158EC00C56835 /* Cell3.swift */; };
 		6B6CEE442A5419BC00935DB5 /* ContactsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B6CEE432A5419BC00935DB5 /* ContactsCell.xib */; };
 		6B6CEE492A541A2200935DB5 /* DetailViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6CEE452A541A2200935DB5 /* DetailViewConfiguration.swift */; };
 		6B6CEE4A2A541A2200935DB5 /* DetailViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6CEE462A541A2200935DB5 /* DetailViewRouter.swift */; };
@@ -62,6 +76,20 @@
 		57CAC8D4763EFB0841EACABC /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2DAD862A557D2B0013453F /* AddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCell.swift; sourceTree = "<group>"; };
 		6B2DAD872A557D2B0013453F /* AddCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCell.xib; sourceTree = "<group>"; };
+		6B5B93592A5EAC8100C56835 /* Catalog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catalog.storyboard; sourceTree = "<group>"; };
+		6B5B935C2A5EAF9200C56835 /* CatalogConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogConfiguration.swift; sourceTree = "<group>"; };
+		6B5B935D2A5EAF9200C56835 /* CatalogRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRouter.swift; sourceTree = "<group>"; };
+		6B5B935E2A5EAF9200C56835 /* CatalogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogViewController.swift; sourceTree = "<group>"; };
+		6B5B935F2A5EAF9200C56835 /* CatalogInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogInteractor.swift; sourceTree = "<group>"; };
+		6B5B93652A5EB07800C56835 /* CatalogModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModels.swift; sourceTree = "<group>"; };
+		6B5B93682A5EB3DB00C56835 /* CatalogCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCell.swift; sourceTree = "<group>"; };
+		6B5B936D2A5EE13700C56835 /* CatalogDetailConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailConfiguration.swift; sourceTree = "<group>"; };
+		6B5B936E2A5EE13700C56835 /* CatalogDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailRouter.swift; sourceTree = "<group>"; };
+		6B5B936F2A5EE13700C56835 /* CatalogDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailViewController.swift; sourceTree = "<group>"; };
+		6B5B93702A5EE13700C56835 /* CatalogDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDetailInteractor.swift; sourceTree = "<group>"; };
+		6B5B93792A61518200C56835 /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		6B5B937B2A6158E300C56835 /* Cell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell2.swift; sourceTree = "<group>"; };
+		6B5B937D2A6158EC00C56835 /* Cell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell3.swift; sourceTree = "<group>"; };
 		6B6CEE432A5419BC00935DB5 /* ContactsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsCell.xib; sourceTree = "<group>"; };
 		6B6CEE452A541A2200935DB5 /* DetailViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewConfiguration.swift; sourceTree = "<group>"; };
 		6B6CEE462A541A2200935DB5 /* DetailViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewRouter.swift; sourceTree = "<group>"; };
@@ -154,6 +182,60 @@
 			path = AddCell;
 			sourceTree = "<group>";
 		};
+		6B5B93582A5EAC6A00C56835 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				6B83B4852A4ACD16002D894B /* DepencencyInjection */,
+				6B5B936C2A5EE12600C56835 /* CatalogDetail */,
+				6B5B935B2A5EAF7E00C56835 /* Catalog */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		6B5B935B2A5EAF7E00C56835 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				6B5B93642A5EAFAC00C56835 /* Storyboard */,
+				6B5B935C2A5EAF9200C56835 /* CatalogConfiguration.swift */,
+				6B5B935D2A5EAF9200C56835 /* CatalogRouter.swift */,
+				6B5B93682A5EB3DB00C56835 /* CatalogCell.swift */,
+				6B5B935E2A5EAF9200C56835 /* CatalogViewController.swift */,
+				6B5B935F2A5EAF9200C56835 /* CatalogInteractor.swift */,
+				6B5B93652A5EB07800C56835 /* CatalogModels.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		6B5B93642A5EAFAC00C56835 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				6B5B93592A5EAC8100C56835 /* Catalog.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		6B5B936C2A5EE12600C56835 /* CatalogDetail */ = {
+			isa = PBXGroup;
+			children = (
+				6B5B937F2A6158F000C56835 /* Cells */,
+				6B5B936D2A5EE13700C56835 /* CatalogDetailConfiguration.swift */,
+				6B5B936E2A5EE13700C56835 /* CatalogDetailRouter.swift */,
+				6B5B936F2A5EE13700C56835 /* CatalogDetailViewController.swift */,
+				6B5B93702A5EE13700C56835 /* CatalogDetailInteractor.swift */,
+			);
+			path = CatalogDetail;
+			sourceTree = "<group>";
+		};
+		6B5B937F2A6158F000C56835 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6B5B93792A61518200C56835 /* Cell.swift */,
+				6B5B937B2A6158E300C56835 /* Cell2.swift */,
+				6B5B937D2A6158EC00C56835 /* Cell3.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6B7459AD2A504B9000613299 /* LocalizationString */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +275,7 @@
 		6B8475402A45953600EBA41A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6B83B4852A4ACD16002D894B /* DepencencyInjection */,
+				6B5B93582A5EAC6A00C56835 /* Catalog */,
 				6BC9B8292A54168400D9F3CC /* DetailView */,
 				6BC9B8282A54167500D9F3CC /* AddView */,
 				6BE03ED32A4C5EFA00484E91 /* ContactsList */,
@@ -432,6 +514,7 @@
 				6B9CA9792A5C7AAB00597309 /* Localizable.strings in Resources */,
 				6B8475652A45A66700EBA41A /* VC2.storyboard in Resources */,
 				6B6CEE442A5419BC00935DB5 /* ContactsCell.xib in Resources */,
+				6B5B935A2A5EAC8100C56835 /* Catalog.storyboard in Resources */,
 				6B84754B2A45953600EBA41A /* Assets.xcassets in Resources */,
 				6B9CA9872A5DA43700597309 /* DetailCell2.xib in Resources */,
 				6B8475492A45953600EBA41A /* VC1.storyboard in Resources */,
@@ -497,23 +580,35 @@
 				6BAE615C2A4D7DF800DB7ED6 /* ContactsModels.swift in Sources */,
 				6B6CEE492A541A2200935DB5 /* DetailViewConfiguration.swift in Sources */,
 				6B9CA9822A5DA42900597309 /* DetailCell1.swift in Sources */,
+				6B5B936A2A5EB3DB00C56835 /* CatalogCell.swift in Sources */,
 				6B9CA9862A5DA43700597309 /* DetailCell2.swift in Sources */,
+				6B5B93742A5EE13700C56835 /* CatalogDetailInteractor.swift in Sources */,
 				6BE03ED02A4C486D00484E91 /* TableViewCell.swift in Sources */,
+				6B5B93662A5EB07800C56835 /* CatalogModels.swift in Sources */,
+				6B5B937A2A61518200C56835 /* Cell.swift in Sources */,
 				6BE03EBE2A4C1AB700484E91 /* VC3ViewController.swift in Sources */,
+				6B5B93712A5EE13700C56835 /* CatalogDetailConfiguration.swift in Sources */,
 				6B8475442A45953600EBA41A /* SceneDelegate.swift in Sources */,
 				6B6CEE542A541AEA00935DB5 /* AddViewInteractor.swift in Sources */,
 				6B2DAD882A557D2B0013453F /* AddCell.swift in Sources */,
+				6B5B93732A5EE13700C56835 /* CatalogDetailViewController.swift in Sources */,
+				6B5B937E2A6158EC00C56835 /* Cell3.swift in Sources */,
+				6B5B93622A5EAF9200C56835 /* CatalogViewController.swift in Sources */,
 				6B7459B92A50513800613299 /* DetailViewController.swift in Sources */,
 				6BE03EBC2A4C1AB700484E91 /* VC3Configuration.swift in Sources */,
+				6B5B937C2A6158E300C56835 /* Cell2.swift in Sources */,
 				6B84757B2A45CAA200EBA41A /* VC2Interactor.swift in Sources */,
 				6BAE61602A4D802C00DB7ED6 /* ContactsCell.swift in Sources */,
+				6B5B93722A5EE13700C56835 /* CatalogDetailRouter.swift in Sources */,
 				6B8475792A45CAA200EBA41A /* VC2Router.swift in Sources */,
 				6B84757F2A45CD9800EBA41A /* VC1ViewController.swift in Sources */,
 				6BE03EDD2A4C5F2F00484E91 /* ContactsInteractor.swift in Sources */,
 				6B84756D2A45CA3900EBA41A /* VC1Router.swift in Sources */,
+				6B5B93632A5EAF9200C56835 /* CatalogInteractor.swift in Sources */,
 				6B6CEE522A541AEA00935DB5 /* AddViewRouter.swift in Sources */,
 				6BE03EB12A4B051000484E91 /* VC1Models.swift in Sources */,
 				6B6CEE512A541AEA00935DB5 /* AddViewConfiguration.swift in Sources */,
+				6B5B93612A5EAF9200C56835 /* CatalogRouter.swift in Sources */,
 				6B83B4872A4ACD4A002D894B /* SwinjectAutoregistration.swift in Sources */,
 				6BE03ECD2A4C2A7800484E91 /* VC3Models.swift in Sources */,
 				6BE03EDC2A4C5F2F00484E91 /* ContactsViewController.swift in Sources */,
@@ -523,6 +618,7 @@
 				6B6CEE4A2A541A2200935DB5 /* DetailViewRouter.swift in Sources */,
 				6BE03EBF2A4C1AB700484E91 /* VC3Interactor.swift in Sources */,
 				6B7459A82A4F47BA00613299 /* AddViewController.swift in Sources */,
+				6B5B93602A5EAF9200C56835 /* CatalogConfiguration.swift in Sources */,
 				6B84757D2A45CD7500EBA41A /* VC1Interactor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

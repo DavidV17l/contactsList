@@ -30,5 +30,5 @@ class ContactsRouter: NSObject, ContactsRoutingLogic, ContactsDataPassing {
         } else if segue.identifier == "handleDetailSegue" {
             self.viewController?.handleDetailSegue(segue: segue)
         }
-    }    
+    }
 }

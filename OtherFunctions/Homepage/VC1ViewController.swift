@@ -16,6 +16,7 @@ protocol IVC1DisplayLogic: AnyObject {
     func routeTo()
     func routeToTableView()
     func routeToTableView2()
+    func routeToCatalog()
 }
 
 class VC1ViewController: UIViewController, IVC1DisplayLogic {
@@ -36,6 +37,10 @@ class VC1ViewController: UIViewController, IVC1DisplayLogic {
         interactor?.displayTableView2()
     }
     
+    @IBAction func catalogButtonpressed(_ sender: Any) {
+        interactor?.displayCatalog()
+    }
+    
     func routeTo() {
         router?.routeToVC2()
     }
@@ -46,6 +51,10 @@ class VC1ViewController: UIViewController, IVC1DisplayLogic {
     
     func routeToTableView2() {
         router?.routeToVC4()
+    }
+    
+    func routeToCatalog() {
+        router?.routeToCatalog()
     }
     
     func updateText() {

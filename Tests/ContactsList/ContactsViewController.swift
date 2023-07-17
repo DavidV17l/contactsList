@@ -3,12 +3,17 @@ import UIKit
 protocol ContactsDisplayLogic: AnyObject {
     var dataSource: UITableViewDiffableDataSource<Section, Contact> { get set }
     var editedContact: Contact? { get set }
+    var selectedPath: IndexPath? { get set }
+    var selectedSection: Section? { get set }
+    var editMode: Bool { get set }
+    var contacts: ContactList? { get set }
+    var contactsList: [Contact]? { get set }
     func routeToDetail()
     func routeToAdd()
     func update(with list: ContactList, animate: Bool)
     func makeDataSource() -> UITableViewDiffableDataSource<Section, Contact>
-    func handleDetailSegue(segue: UIStoryboardSegue)
     func handleAddSegue(segue: UIStoryboardSegue)
+    func handleDetailSegue(segue: UIStoryboardSegue)
 }
 
 class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableViewDelegate {
@@ -22,12 +27,12 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
     private let cellReuseIdentifier = "TheCell"
     internal lazy var dataSource = makeDataSource()
     
-    private var selectedPath: IndexPath?
-    private var selectedSection: Section?
-    private var editMode: Bool = false
+    internal var selectedPath: IndexPath?
+    internal var selectedSection: Section?
+    internal var editMode: Bool = false
     internal var editedContact: Contact?
-    private var contacts: ContactList?
-    private var contactsList: [Contact]?
+    internal var contacts: ContactList?
+    internal var contactsList: [Contact]?
     
     // MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -156,9 +161,16 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.router?.prepare(for: segue, sender: sender)
     }
-
+    
+    func routeToDetail() {
+        router?.routeToDetail()
+    }
+    
+    func routeToAdd() {
+        router?.routeToAdd()
+    }
+    
     func handleAddSegue(segue: UIStoryboardSegue) {
-        
         let addView = segue.destination as? AddViewController
         if self.editMode == true {
             guard let path = selectedPath?.row else { return }
@@ -191,14 +203,6 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
         }
         tableViewDetail?.selectedContact = selectedContact
         tableViewDetail?.selectedSection = selectedSection
-    }
-    
-    func routeToDetail() {
-        router?.routeToDetail()
-    }
-    
-    func routeToAdd() {
-        router?.routeToAdd()
     }
 }
 

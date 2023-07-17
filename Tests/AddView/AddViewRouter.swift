@@ -17,6 +17,5 @@ class AddViewRouter: NSObject, IAddViewRoutingLogic, IAddViewDataPassing {
         self.dataStore = dataStore
     }
 
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    }    
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {}    
 }

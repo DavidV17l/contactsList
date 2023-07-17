@@ -17,6 +17,7 @@ import UIKit
     func routeToVC2()
     func routeToVC3()
     func routeToVC4()
+    func routeToCatalog()
 }
 
 protocol IVC1DataPassing {
@@ -46,6 +47,10 @@ class VC1Router: NSObject, IVC1RoutingLogic, IVC1DataPassing {
         viewController?.performSegue(withIdentifier: "tableViewSegue2", sender: nil)
     }
     
+    func routeToCatalog() {
+        viewController?.performSegue(withIdentifier: "routeToCatalogSegue", sender: nil)
+    }
+    
     // MARK: Navigation
 
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,12 +66,6 @@ class VC1Router: NSObject, IVC1RoutingLogic, IVC1DataPassing {
                   let _ = viewDestination.router?.dataStore else {
                 return
             }
-        }
-        else if segue.identifier == "tableViewSegue2" {
-//            guard let viewDestination = segue.destination as? ContactsViewController,
-//                  let _ = viewDestination.router?.dataStore else {
-//                return
-//            }
         }
     }  
 }

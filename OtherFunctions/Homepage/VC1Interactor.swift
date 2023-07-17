@@ -16,6 +16,7 @@ protocol IVC1BusinessLogic {
     func displayText(request: VC1Models.ShowText.Request)
     func displayTableView()
     func displayTableView2()
+    func displayCatalog()
 }
 
 protocol IVC1DataStore {
@@ -42,6 +43,10 @@ class VC1Interactor: IVC1BusinessLogic, IVC1DataStore {
     
     internal func displayTableView2() {
         viewController?.routeToTableView2()
+    }
+    
+    internal func displayCatalog() {
+        viewController?.routeToCatalog()
     }
 }
 

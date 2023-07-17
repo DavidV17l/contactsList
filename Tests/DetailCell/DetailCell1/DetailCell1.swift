@@ -1,10 +1,3 @@
-//
-//  DetailCell1.swift
-//  Tests
-//
-//  Created by davide on 11/07/23.
-//
-
 import UIKit
 
 class DetailCell1: UITableViewCell, UIImagePickerControllerDelegate {

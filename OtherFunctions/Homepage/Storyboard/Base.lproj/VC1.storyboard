@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="678" y="-15"/>
         </scene>
-        <!--CatalogID-->
+        <!--Catalog-->
         <scene sceneID="YhP-LV-KqN">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="CatalogID" storyboardName="Catalog" referencedIdentifier="CatalogID" id="cz4-1S-CTV" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="CatalogID" storyboardName="Catalog" id="cz4-1S-CTV" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="lDC-8C-ow7"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnn-m2-aRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -28,9 +28,6 @@ class CatalogRouter: NSObject, ICatalogRoutingLogic, ICatalogDataPassing {
     
     func handleDetailSegue(segue: UIStoryboardSegue) {
         let catalogDetail = segue.destination as? CatalogDetailViewController
-        guard let index = viewController?.selectedPath else { return }
-        guard let items = viewController?.catalogList else { return }
-        let selectedItem: Object = items[index.item]
-        catalogDetail?.selectedItem = selectedItem
+        catalogDetail?.selectedItem = dataStore?.selectedItem
     }
 }

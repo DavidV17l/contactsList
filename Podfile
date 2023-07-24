@@ -7,5 +7,10 @@ target 'Tests' do
 pod 'Alamofire', '5.7.1'
 pod 'SwinjectAutoregistration', '2.8.1'
 pod 'SwinjectStoryboard', '2.2.2'
+pod 'FirebaseAuth'
+pod 'FirebaseFirestore'
+pod 'Firebase/Database'
+pod 'FirebaseFirestoreSwift'
+
 
 end

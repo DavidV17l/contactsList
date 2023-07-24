@@ -44,7 +44,7 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.item {
         case 0: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[0], for: indexPath) as? Cell {
-            cell.mainImage.image = selectedItem?.picture
+            cell.mainImage.image = UIImage(named: selectedItem?.picture ?? "")
             cell.titleLabel.text = selectedItem?.title
             return cell
         }
@@ -65,13 +65,13 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(128.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(140.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(128.0))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5.0, leading: 5.0, bottom: 5.0, trailing: 5.0)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(140.0))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-        
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0.0, leading: 10.0, bottom: 0.0, trailing: 10.0)
         
         return UICollectionViewCompositionalLayout(section: section)
     }

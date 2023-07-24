@@ -1,12 +1,12 @@
 import UIKit
 
 protocol ICatalogDisplayLogic: AnyObject {
-    func update(with list: ObjectList, animate: Bool)
-    var selectedPath: IndexPath? { get set }
+    func update(with list: [Object], animate: Bool)
+    func setupList()
     var catalogList: [Object]? { get set }
 }
 
-class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectionViewDelegate {
+class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectionViewDelegate, UISearchResultsUpdating {
     
     //MARK: - Typealias
     fileprivate typealias CatalogDataSource = UICollectionViewDiffableDataSource<CatalogSection, Object>
@@ -21,7 +21,6 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
     
     var catalog: ObjectList?
     var catalogList: [Object]?
-    var selectedPath: IndexPath?
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -30,6 +29,10 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
             collectionView.collectionViewLayout = createCollectionViewLayout()
         }
     }
+    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
+    
+    private var searchController = UISearchController(searchResultsController: nil)
     
     //MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -42,34 +45,47 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        catalog = interactor?.objects
-        catalogList = interactor?.objectList
-        configureDataSource()
+        navigationItem.hidesSearchBarWhenScrolling = true
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search..."
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        loader.startAnimating()
+        interactor?.initializer()
         let margin: CGFloat = 10
         guard let collectionView = collectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
         flowLayout.minimumInteritemSpacing = margin
         flowLayout.minimumLineSpacing = margin
         flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    func setupList() {
+        guard let inter = interactor else { return }
+        catalog = inter.objects
+        catalogList = inter.objectList
+        configureDataSource()
+        loader.stopAnimating()
     }
     
     //MARK: - Collection View Logic
     private func createCollectionViewLayout() -> UICollectionViewLayout {
         
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(171.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(200.0))
+        item.contentInsets = NSDirectionalEdgeInsets(top: 5.0, leading: 5.0, bottom: 5.0, trailing: 5.0)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(171.0))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0.0, leading: 20.0, bottom: 0.0, trailing: 20.0)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0.0, leading: 10.0, bottom: 0.0, trailing: 10.0)
         
         return UICollectionViewCompositionalLayout(section: section)
     }
     
-    func update(with list: ObjectList, animate: Bool = true) {
+    func update(with list: [Object], animate: Bool = true) {
         var snapshot = DataSourceSnapshot()
         snapshot.appendSections(CatalogSection.allCases)
-        snapshot.appendItems(list.everything, toSection: .everything)
+        snapshot.appendItems(list, toSection: .everything)
         dataSource.apply(snapshot, animatingDifferences: animate)
     }
     
@@ -77,20 +93,34 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
         dataSource = CatalogDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, object) -> CatalogCell? in
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier, for: indexPath) as! CatalogCell
             cell.label.text = object.title
-            cell.image.image = object.picture
+            cell.image.image = UIImage(named: object.picture ?? "")
             return cell
         })
         guard let list = catalogList else { return }
-        var snapshot = DataSourceSnapshot()
-        snapshot.appendSections([CatalogSection.everything])
-        snapshot.appendItems(list)
-        dataSource.apply(snapshot, animatingDifferences: false)
+        update(with: list)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard var dataStore = router?.dataStore else { return }
         collectionView.deselectItem(at: indexPath, animated: true)
-        selectedPath = indexPath
+        dataStore.selectedItem = dataSource.snapshot().itemIdentifiers[indexPath.item]
         routeToDetail()
+    }
+    
+    //MARK: - Search Bar Logic
+    func updateSearchResults(for searchController: UISearchController) {
+        guard var list: [Object] = catalogList else { return }
+        list = filteredObjects(for: searchController.searchBar.text)
+        update(with: list)
+    }
+    
+    func filteredObjects(for searchText: String?) -> [Object] {
+        guard let objs = catalogList else { return catalogList ?? [] }
+        guard let query = searchText, !query.isEmpty else { return objs }
+        return objs.filter { obj in
+            let matches = obj.title?.lowercased().contains(query.lowercased())
+            return matches ?? false
+        }
     }
     
     //MARK: - Routing

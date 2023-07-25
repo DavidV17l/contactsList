@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseFirestore
 
 protocol ICatalogDetailDisplayLogic: AnyObject {
     var selectedItem: Object? { get set }
@@ -7,6 +8,8 @@ protocol ICatalogDetailDisplayLogic: AnyObject {
 class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic, UICollectionViewDelegate, UICollectionViewDataSource {
     
     //MARK: - Variables
+    let db = Firestore.firestore()
+    
     var interactor: ICatalogDetailBusinessLogic?
     var router: (NSObjectProtocol & ICatalogDetailRoutingLogic & ICatalogDetailDataPassing)?
     
@@ -21,6 +24,8 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
     }
     
     var selectedItem: Object?
+
+    @IBOutlet weak var deleteButton: UIButton!
     
     //MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -33,6 +38,7 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        deleteButton.tintColor = UIColor.red
         collectionDetailView.reloadData()
     }
     
@@ -74,6 +80,19 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
         section.contentInsets = NSDirectionalEdgeInsets(top: 0.0, leading: 10.0, bottom: 0.0, trailing: 10.0)
         
         return UICollectionViewCompositionalLayout(section: section)
+    }
+    
+    
+    @IBAction func deleteButtonPressed(_ sender: Any) {
+        guard let itemid = selectedItem?.id else { return }
+        db.collection("objects").document(itemid).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
+            }
+        }
+        navigationController?.popViewController(animated: true)
     }
     
     //MARK: - Routing

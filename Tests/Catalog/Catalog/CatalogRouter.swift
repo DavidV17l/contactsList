@@ -3,6 +3,7 @@ import UIKit
 @objc protocol ICatalogRoutingLogic {
     func prepare(for segue: UIStoryboardSegue, sender: Any?)
     func routeToDetail()
+    func routeToAdd()
 }
 
 protocol ICatalogDataPassing {
@@ -20,6 +21,10 @@ class CatalogRouter: NSObject, ICatalogRoutingLogic, ICatalogDataPassing {
     
     func routeToDetail() {
         viewController?.performSegue(withIdentifier: "handleDetailCatalogSegue", sender: self)
+    }
+    
+    func routeToAdd() {
+        viewController?.performSegue(withIdentifier: "handleAddCatalogSegue", sender: self)
     }
     
     func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -5,6 +5,7 @@ enum CatalogSection: String, CaseIterable {
 }
 
 class Object: NSObject, Codable {
+    var id: String
     var title: String?
     var picture: String?
     var detail1: String?
@@ -12,8 +13,8 @@ class Object: NSObject, Codable {
     var desc1: String?
     var desc2: String?
 
-    init(title: String, picture: String?, detail1: String?, detail2: String?, desc1: String?, desc2: String?) {
-        super.init()
+    init(id: String, title: String, picture: String?, detail1: String?, detail2: String?, desc1: String?, desc2: String?) {
+        self.id = id
         self.title = title
         self.picture = picture
         self.detail1 = detail1

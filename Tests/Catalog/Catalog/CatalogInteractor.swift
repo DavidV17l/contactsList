@@ -39,13 +39,14 @@ class CatalogInteractor: ICatalogBusinessLogic, ICatalogDataStore {
             } else {
                 for document in querySnapshot!.documents {
                     let data = document.data()
+                    let id = data["id"] as? String ?? ""
                     let title = data["title"] as? String ?? ""
                     let picture = data["picture"] as? String
                     let detail1 = data["detail1"] as? String
                     let detail2 = data["detail2"] as? String
                     let desc1 = data["desc1"] as? String
                     let desc2 = data["desc2"] as? String
-                    let object = Object(title: title, picture: picture, detail1: detail1, detail2: detail2, desc1: desc1, desc2: desc2)
+                    let object = Object(id: id, title: title, picture: picture, detail1: detail1, detail2: detail2, desc1: desc1, desc2: desc2)
                     objectArray.append(object)
                 }
                 self.objects = ObjectList(everything: objectArray)

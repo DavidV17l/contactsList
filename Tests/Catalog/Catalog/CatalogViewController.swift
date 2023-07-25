@@ -46,6 +46,8 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesSearchBarWhenScrolling = true
+        navigationItem.rightBarButtonItem = .init(title: NSLocalizedString("AddButton", comment: "Button name"), style: .plain, target: self, action: #selector(handleAdd))
+        navigationItem.leftBarButtonItem = .init(title: "Reload", style: .plain, target: self, action: #selector(updateList))
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search..."
@@ -130,5 +132,15 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.router?.prepare(for: segue, sender: sender)
+    }
+    
+    @objc private func handleAdd() {
+        router?.routeToAdd()
+    }
+    
+    @objc private func updateList() {
+        interactor?.objectList = []
+        interactor?.objects = nil
+        interactor?.initializer()
     }
 }

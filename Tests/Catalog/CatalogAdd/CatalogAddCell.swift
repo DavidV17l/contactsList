@@ -1,8 +1,9 @@
 import UIKit
 
-class CatalogAddCell5: UICollectionViewCell {
+class CatalogAddCell: UICollectionViewCell {
     
     @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)

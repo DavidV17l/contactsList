@@ -2,6 +2,7 @@ import UIKit
 
 @objc protocol ICatalogDetailRoutingLogic {
     func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    func routeToEdit()
 }
 
 protocol ICatalogDetailDataPassing {
@@ -17,5 +18,14 @@ class CatalogDetailRouter: NSObject, ICatalogDetailRoutingLogic, ICatalogDetailD
         self.dataStore = dataStore
     }
 
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {}
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vc = segue.destination as? CatalogAddViewController, var ds = vc.router?.dataStore else { return }
+        guard let item = viewController?.selectedItem else { return }
+        ds.item = item
+        ds.detailVC = self.viewController
+    }
+    
+    func routeToEdit() {
+        viewController?.performSegue(withIdentifier: "handleEditSegue", sender: self)
+    }
 }

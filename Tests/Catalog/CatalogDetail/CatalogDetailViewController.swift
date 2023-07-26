@@ -2,6 +2,7 @@ import UIKit
 import FirebaseFirestore
 
 protocol ICatalogDetailDisplayLogic: AnyObject {
+    func reload()
     var selectedItem: Object? { get set }
 }
 
@@ -40,6 +41,7 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
         super.viewDidLoad()
         deleteButton.tintColor = UIColor.red
         collectionDetailView.reloadData()
+        navigationItem.rightBarButtonItem = .init(title: "Edit", style: .plain, target: self, action: #selector(editButtonPressed))
     }
     
     //MARK: - Collection View Logic
@@ -93,10 +95,19 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
             }
         }
         navigationController?.popViewController(animated: true)
+        router?.dataStore?.vc?.updateList()
+    }
+    
+    func reload() {
+        collectionDetailView.reloadData()
     }
     
     //MARK: - Routing
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.router?.prepare(for: segue, sender: sender)
+    }
+    
+    @objc func editButtonPressed() {
+        router?.routeToEdit()
     }
 }

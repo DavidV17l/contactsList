@@ -3,6 +3,7 @@ import UIKit
 protocol ICatalogDisplayLogic: AnyObject {
     func update(with list: [Object], animate: Bool)
     func setupList()
+    func updateList()
     var catalogList: [Object]? { get set }
 }
 
@@ -47,7 +48,6 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
         super.viewDidLoad()
         navigationItem.hidesSearchBarWhenScrolling = true
         navigationItem.rightBarButtonItem = .init(title: NSLocalizedString("AddButton", comment: "Button name"), style: .plain, target: self, action: #selector(handleAdd))
-        navigationItem.leftBarButtonItem = .init(title: "Reload", style: .plain, target: self, action: #selector(updateList))
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search..."
@@ -138,7 +138,7 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
         router?.routeToAdd()
     }
     
-    @objc private func updateList() {
+    internal func updateList() {
         interactor?.objectList = []
         interactor?.objects = nil
         interactor?.initializer()

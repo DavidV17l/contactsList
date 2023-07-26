@@ -16,15 +16,11 @@ class CatalogCell: UICollectionViewCell {
         contentView.layer.cornerRadius = cornerRadius
         contentView.layer.masksToBounds = true
         
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = designColor
         contentView.layer.backgroundColor = designColor
         
         layer.cornerRadius = cornerRadius
         layer.masksToBounds = false
         
-        layer.borderWidth = 1
-        layer.borderColor = designColor
         layer.backgroundColor = designColor
         
         layer.shadowRadius = 8.0

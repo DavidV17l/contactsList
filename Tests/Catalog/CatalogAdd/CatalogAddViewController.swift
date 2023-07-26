@@ -57,7 +57,7 @@ class CatalogAddViewController: UIViewController, ICatalogAddDisplayLogic, UICol
     
     //MARK: - CollectionView Add Element Logic
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 6
+        return cellsID.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -67,60 +67,48 @@ class CatalogAddViewController: UIViewController, ICatalogAddDisplayLogic, UICol
             cell.textField.text = titleText
             cell.textField.tag = indexPath.item
             cell.textField.delegate = self
-            if item != nil {
-                cell.textField.text = item?.title
-                self.titleText = item?.title ?? ""
-            }
+            cell.textField.text = item?.title
+            self.titleText = item?.title ?? ""
             return cell
         }
         case 1: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[1], for: indexPath) as? CatalogAddCell {
             cell.textField.text = imageText
             cell.textField.tag = indexPath.item
             cell.textField.delegate = self
-            if item != nil {
-                cell.textField.text = item?.picture
-                self.imageText = item?.picture ?? ""
-            }
+            cell.textField.text = item?.picture
+            self.imageText = item?.picture ?? ""
             return cell
         }
         case 2: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[2], for: indexPath) as? CatalogAddCell {
             cell.textField.text = desc1
             cell.textField.tag = indexPath.item
             cell.textField.delegate = self
-            if item != nil {
-                cell.textField.text = item?.desc1
-                self.desc1 = item?.desc1 ?? ""
-            }
+            cell.textField.text = item?.desc1
+            self.desc1 = item?.desc1 ?? ""
             return cell
         }
         case 3: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[3], for: indexPath) as? CatalogAddCell {
             cell.textField.text = det1
             cell.textField.tag = indexPath.item
             cell.textField.delegate = self
-            if item != nil {
-                cell.textField.text = item?.detail1
-                self.det1 = item?.detail1 ?? ""
-            }
+            cell.textField.text = item?.detail1
+            self.det1 = item?.detail1 ?? ""
             return cell
         }
         case 4: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[4], for: indexPath) as? CatalogAddCell {
             cell.textField.text = desc2
             cell.textField.tag = indexPath.item
             cell.textField.delegate = self
-            if item != nil {
-                cell.textField.text = item?.desc2
-                self.desc2 = item?.desc2 ?? ""
-            }
+            cell.textField.text = item?.desc2
+            self.desc2 = item?.desc2 ?? ""
             return cell
         }
         case 5: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[5], for: indexPath) as? CatalogAddCell {
             cell.textField.text = det2
             cell.textField.tag = indexPath.item
             cell.textField.delegate = self
-            if item != nil {
-                cell.textField.text = item?.detail2
-                self.det2 = item?.detail2 ?? ""
-            }
+            cell.textField.text = item?.detail2
+            self.det2 = item?.detail2 ?? ""
             return cell
         }
             default: break }

@@ -74,7 +74,7 @@
 		6BE03EDB2A4C5F2F00484E91 /* ContactsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE03ED72A4C5F2F00484E91 /* ContactsRouter.swift */; };
 		6BE03EDC2A4C5F2F00484E91 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE03ED82A4C5F2F00484E91 /* ContactsViewController.swift */; };
 		6BE03EDD2A4C5F2F00484E91 /* ContactsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BE03ED92A4C5F2F00484E91 /* ContactsInteractor.swift */; };
-		6BE069812A555D1700E78C93 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BE069802A555D1700E78C93 /* Contacts.storyboard */; };
+		6BF086332A714D7200878067 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BF086322A714D7200878067 /* Contacts.storyboard */; };
 		B6690BBB6E4510450888DE14 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57CAC8D4763EFB0841EACABC /* Pods_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,7 +151,7 @@
 		6BE03ED72A4C5F2F00484E91 /* ContactsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsRouter.swift; sourceTree = "<group>"; };
 		6BE03ED82A4C5F2F00484E91 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		6BE03ED92A4C5F2F00484E91 /* ContactsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsInteractor.swift; sourceTree = "<group>"; };
-		6BE069802A555D1700E78C93 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Contacts.storyboard; path = ContactsCell/Contacts.storyboard; sourceTree = "<group>"; };
+		6BF086322A714D7200878067 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		7A48CC823088F92773FC8784 /* Pods-Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.release.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BD644371F767BD0D3F115919 /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -299,21 +299,15 @@
 		6B8475402A45953600EBA41A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				6BF086302A714C0900878067 /* Contacts */,
 				6B83B4852A4ACD16002D894B /* DepencencyInjection */,
 				6B5B93582A5EAC6A00C56835 /* Catalog */,
-				6BC9B8292A54168400D9F3CC /* DetailView */,
-				6BC9B8282A54167500D9F3CC /* AddView */,
-				6BE03ED32A4C5EFA00484E91 /* ContactsList */,
 				6B8475412A45953600EBA41A /* AppDelegate.swift */,
 				6B8475432A45953600EBA41A /* SceneDelegate.swift */,
 				6B84754A2A45953600EBA41A /* Assets.xcassets */,
-				6B9CA97F2A5DA3F500597309 /* DetailCell */,
-				6B2DAD852A557D110013453F /* AddCell */,
-				6BAE615D2A4D801400DB7ED6 /* ContactsCell */,
 				6B84754C2A45953600EBA41A /* LaunchScreen.storyboard */,
 				6BDEE1DE2A67D5DB00F8A404 /* GoogleService-Info.plist */,
 				6B84754F2A45953600EBA41A /* Info.plist */,
-				6BE069802A555D1700E78C93 /* Contacts.storyboard */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -471,6 +465,28 @@
 			path = ContactsList;
 			sourceTree = "<group>";
 		};
+		6BF086302A714C0900878067 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				6BF086322A714D7200878067 /* Contacts.storyboard */,
+				6BF086312A714C4A00878067 /* Cells */,
+				6BC9B8292A54168400D9F3CC /* DetailView */,
+				6BC9B8282A54167500D9F3CC /* AddView */,
+				6BE03ED32A4C5EFA00484E91 /* ContactsList */,
+			);
+			path = Contacts;
+			sourceTree = "<group>";
+		};
+		6BF086312A714C4A00878067 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				6B9CA97F2A5DA3F500597309 /* DetailCell */,
+				6B2DAD852A557D110013453F /* AddCell */,
+				6BAE615D2A4D801400DB7ED6 /* ContactsCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -532,12 +548,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BE069812A555D1700E78C93 /* Contacts.storyboard in Resources */,
 				6B84754E2A45953600EBA41A /* LaunchScreen.storyboard in Resources */,
 				6BE03ED12A4C486D00484E91 /* TableViewCell.xib in Resources */,
 				6BE03EC32A4C1ADD00484E91 /* VC3.storyboard in Resources */,
 				6B2DAD892A557D2B0013453F /* AddCell.xib in Resources */,
 				6B9CA9792A5C7AAB00597309 /* Localizable.strings in Resources */,
+				6BF086332A714D7200878067 /* Contacts.storyboard in Resources */,
 				6B8475652A45A66700EBA41A /* VC2.storyboard in Resources */,
 				6B6CEE442A5419BC00935DB5 /* ContactsCell.xib in Resources */,
 				6B5B935A2A5EAC8100C56835 /* Catalog.storyboard in Resources */,

@@ -1,20 +1,15 @@
 import UIKit
 
-class Cell2: UICollectionViewCell {
-    
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var detailLabel: UILabel!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+class CatalogAddCell: UICollectionViewCell {
+
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var errorLabel: UILabel!
     
     var cornerRadius: CGFloat = 10.0
     var designColor: CGColor = UIColor(red: 0.92, green: 0.91, blue: 1.00, alpha: 1.00).cgColor
+    
+    static let identifier = "catalogAddCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

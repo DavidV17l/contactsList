@@ -51,7 +51,8 @@ class CatalogInteractor: ICatalogBusinessLogic, ICatalogDataStore {
                 }
                 self.objects = ObjectList(everything: objectArray)
                 self.objectList.append(contentsOf: objectArray)
-                self.viewController?.setupList()
+                self.viewController?.catalogList = self.objectList
+                self.viewController?.update(with: self.objectList, animate: true)
             }
         }
     }

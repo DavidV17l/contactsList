@@ -14,8 +14,6 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
     var interactor: ICatalogDetailBusinessLogic?
     var router: (NSObjectProtocol & ICatalogDetailRoutingLogic & ICatalogDetailDataPassing)?
     
-    let cellsID: [String] = ["catalogDetailCell", "catalogDesc1", "catalogDesc2"]
-    
     @IBOutlet weak var collectionDetailView: UICollectionView! {
         didSet {
             collectionDetailView.delegate = self
@@ -25,8 +23,9 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
     }
     
     var selectedItem: Object?
-
+    
     @IBOutlet weak var deleteButton: UIButton!
+    private let reuseIdentifier = CatalogDetailCell.identifier
     
     //MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -40,35 +39,35 @@ class CatalogDetailViewController: UIViewController, ICatalogDetailDisplayLogic,
     override func viewDidLoad() {
         super.viewDidLoad()
         deleteButton.tintColor = UIColor.red
+        collectionDetailView.register(UINib(nibName: "CatalogDetailCell", bundle: .main), forCellWithReuseIdentifier: reuseIdentifier)
         collectionDetailView.reloadData()
         navigationItem.rightBarButtonItem = .init(title: "Edit", style: .plain, target: self, action: #selector(editButtonPressed))
     }
     
     //MARK: - Collection View Logic
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellsID.count
+        return 3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CatalogDetailCell
         switch indexPath.item {
-        case 0: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[0], for: indexPath) as? Cell {
-            cell.mainImage.image = UIImage(named: selectedItem?.picture ?? "")
+        case 0:
+            cell.detailLabel.isHidden = true
+            cell.imageView.image = UIImage(named: selectedItem?.picture ?? "")
             cell.titleLabel.text = selectedItem?.title
-            return cell
-        }
-        case 1: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[1], for: indexPath) as? Cell2 {
-            cell.descriptionLabel.text = selectedItem?.desc1
+        case 1:
+            cell.imageView.isHidden = true
+            cell.titleLabel.text = selectedItem?.desc1
             cell.detailLabel.text = selectedItem?.detail1
-            return cell
+        case 2:
+            cell.imageView.isHidden = true
+            cell.titleLabel.text = selectedItem?.desc2
+            cell.detailLabel.text = selectedItem?.detail2
+        default:
+            break
         }
-        case 2: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[2], for: indexPath) as? Cell3 {
-            cell.description2Label.text = selectedItem?.desc2
-            cell.detail2Label.text = selectedItem?.detail2
-            return cell
-        }
-        default: break
-        }
-        return UICollectionViewCell()
+        return cell
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {

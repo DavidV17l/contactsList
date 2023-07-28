@@ -2,7 +2,6 @@ import UIKit
 
 protocol ICatalogDisplayLogic: AnyObject {
     func update(with list: [Object], animate: Bool)
-    func setupList()
     func updateList()
     var catalogList: [Object]? { get set }
 }
@@ -10,18 +9,31 @@ protocol ICatalogDisplayLogic: AnyObject {
 class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectionViewDelegate, UISearchResultsUpdating {
     
     //MARK: - Typealias
-    fileprivate typealias CatalogDataSource = UICollectionViewDiffableDataSource<CatalogSection, Object>
-    fileprivate typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<CatalogSection, Object>
+    private typealias CatalogDataSource = UICollectionViewDiffableDataSource<CatalogSection, Object>
+    private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<CatalogSection, Object>
     
     //MARK: - Variables
     var interactor: ICatalogBusinessLogic?
     var router: (NSObjectProtocol & ICatalogRoutingLogic & ICatalogDataPassing)?
     
     private let cellReuseIdentifier = CatalogCell.identifier
-    private var dataSource: CatalogDataSource!
     
-    var catalog: ObjectList?
+    private lazy var dataSource: CatalogDataSource = {
+        return {
+            CatalogDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, object) -> CatalogCell? in
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier, for: indexPath) as! CatalogCell
+                cell.label.text = object.title
+                cell.image.image = UIImage(named: object.picture ?? "")
+                return cell
+            })
+        }()
+    }()
+    
+    private var searchController = UISearchController(searchResultsController: nil)
+    
     var catalogList: [Object]?
+    
+    @IBOutlet weak var loader: UIActivityIndicatorView!
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -30,10 +42,6 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
             collectionView.collectionViewLayout = createCollectionViewLayout()
         }
     }
-    
-    @IBOutlet weak var loader: UIActivityIndicatorView!
-    
-    private var searchController = UISearchController(searchResultsController: nil)
     
     //MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -46,6 +54,12 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loader.startAnimating()
+        initNavigation()
+        interactor?.initializer()
+    }
+    
+    func initNavigation() {
         navigationItem.hidesSearchBarWhenScrolling = true
         navigationItem.rightBarButtonItem = .init(title: NSLocalizedString("AddButton", comment: "Button name"), style: .plain, target: self, action: #selector(handleAdd))
         searchController.searchResultsUpdater = self
@@ -53,21 +67,6 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
         searchController.searchBar.placeholder = "Search..."
         navigationItem.searchController = searchController
         definesPresentationContext = true
-        loader.startAnimating()
-        interactor?.initializer()
-        let margin: CGFloat = 10
-        guard let collectionView = collectionView, let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
-        flowLayout.minimumInteritemSpacing = margin
-        flowLayout.minimumLineSpacing = margin
-        flowLayout.sectionInset = UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin)
-    }
-    
-    func setupList() {
-        guard let inter = interactor else { return }
-        catalog = inter.objects
-        catalogList = inter.objectList
-        configureDataSource()
-        loader.stopAnimating()
     }
     
     //MARK: - Collection View Logic
@@ -89,22 +88,11 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
         snapshot.appendSections(CatalogSection.allCases)
         snapshot.appendItems(list, toSection: .everything)
         dataSource.apply(snapshot, animatingDifferences: animate)
-    }
-    
-    private func configureDataSource() {
-        dataSource = CatalogDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, object) -> CatalogCell? in
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellReuseIdentifier, for: indexPath) as! CatalogCell
-            cell.label.text = object.title
-            cell.image.image = UIImage(named: object.picture ?? "")
-            return cell
-        })
-        guard let list = catalogList else { return }
-        update(with: list)
+        loader.stopAnimating()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard var dataStore = router?.dataStore else { return }
-        collectionView.deselectItem(at: indexPath, animated: true)
         dataStore.selectedItem = dataSource.snapshot().itemIdentifiers[indexPath.item]
         routeToDetail()
     }
@@ -126,12 +114,8 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
     }
     
     //MARK: - Routing
-    func routeToDetail() {
+    internal func routeToDetail() {
         router?.routeToDetail()
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.router?.prepare(for: segue, sender: sender)
     }
     
     @objc private func handleAdd() {
@@ -142,5 +126,9 @@ class CatalogViewController: UIViewController, ICatalogDisplayLogic, UICollectio
         interactor?.objectList = []
         interactor?.objects = nil
         interactor?.initializer()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.router?.prepare(for: segue, sender: sender)
     }
 }

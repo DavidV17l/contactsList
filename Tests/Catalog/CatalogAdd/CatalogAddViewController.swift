@@ -12,8 +12,7 @@ class CatalogAddViewController: UIViewController, ICatalogAddDisplayLogic, UICol
     let db = Firestore.firestore()
     
     var counter: String = UUID().uuidString
-    
-    var cellsID: [String] = ["catalogAddCell", "catalogAddCell2", "catalogAddCell3", "catalogAddCell4", "catalogAddCell5", "catalogAddCell6"]
+    private let reuseIdentifier = CatalogAddCell.identifier
     
     @IBOutlet weak var collectionView: UICollectionView! {
         didSet {
@@ -44,9 +43,13 @@ class CatalogAddViewController: UIViewController, ICatalogAddDisplayLogic, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.rightBarButtonItem = .init(title: "Reset", style: .plain, target: self, action: #selector(resetFields))
+        
+        collectionView.register(UINib(nibName: "CatalogAddCell", bundle: .main), forCellWithReuseIdentifier: reuseIdentifier)
         if (router?.dataStore?.item) != nil {
             addButton.titleLabel?.text = "Edit"
+            navigationItem.rightBarButtonItem = .init(title: "Reset", style: .plain, target: self, action: #selector(resetFields))
+        } else {
+            navigationItem.rightBarButtonItem = .init(title: "Clear", style: .plain, target: self, action: #selector(clearFields))
         }
     }
     
@@ -57,62 +60,47 @@ class CatalogAddViewController: UIViewController, ICatalogAddDisplayLogic, UICol
     
     //MARK: - CollectionView Add Element Logic
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return cellsID.count
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let item = router?.dataStore?.item
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CatalogAddCell
+        cell.textField.delegate = self
         switch indexPath.item {
-        case 0: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[0], for: indexPath) as? CatalogAddCell {
+        case 0:
             cell.textField.text = titleText
             cell.textField.tag = indexPath.item
-            cell.textField.delegate = self
             cell.textField.text = item?.title
             self.titleText = item?.title ?? ""
-            return cell
-        }
-        case 1: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[1], for: indexPath) as? CatalogAddCell {
+        case 1:
             cell.textField.text = imageText
             cell.textField.tag = indexPath.item
-            cell.textField.delegate = self
             cell.textField.text = item?.picture
             self.imageText = item?.picture ?? ""
-            return cell
-        }
-        case 2: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[2], for: indexPath) as? CatalogAddCell {
+        case 2:
             cell.textField.text = desc1
             cell.textField.tag = indexPath.item
-            cell.textField.delegate = self
             cell.textField.text = item?.desc1
             self.desc1 = item?.desc1 ?? ""
-            return cell
-        }
-        case 3: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[3], for: indexPath) as? CatalogAddCell {
+        case 3:
             cell.textField.text = det1
             cell.textField.tag = indexPath.item
-            cell.textField.delegate = self
             cell.textField.text = item?.detail1
             self.det1 = item?.detail1 ?? ""
-            return cell
-        }
-        case 4: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[4], for: indexPath) as? CatalogAddCell {
+        case 4:
             cell.textField.text = desc2
             cell.textField.tag = indexPath.item
-            cell.textField.delegate = self
             cell.textField.text = item?.desc2
             self.desc2 = item?.desc2 ?? ""
-            return cell
-        }
-        case 5: if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellsID[5], for: indexPath) as? CatalogAddCell {
+        case 5:
             cell.textField.text = det2
             cell.textField.tag = indexPath.item
-            cell.textField.delegate = self
             cell.textField.text = item?.detail2
             self.det2 = item?.detail2 ?? ""
-            return cell
+        default: break
         }
-            default: break }
-        return UICollectionViewCell()
+        return cell
     }
     
     
@@ -207,6 +195,17 @@ class CatalogAddViewController: UIViewController, ICatalogAddDisplayLogic, UICol
     }
     
     @objc func resetFields() {
+        guard let item = router?.dataStore?.item else { return }
+        titleText = item.title!
+        imageText = item.picture!
+        desc1 = item.desc1!
+        desc2 = item.desc2!
+        det1 = item.detail1!
+        det2 = item.detail2!
+        collectionView.reloadData()
+    }
+    
+    @objc func clearFields() {
         titleText = ""
         imageText = ""
         desc1 = ""

@@ -17,6 +17,8 @@ protocol IVC1BusinessLogic {
     func displayTableView()
     func displayTableView2()
     func displayCatalog()
+    func displayClient()
+    func displayEureka()
 }
 
 protocol IVC1DataStore {
@@ -47,6 +49,14 @@ class VC1Interactor: IVC1BusinessLogic, IVC1DataStore {
     
     internal func displayCatalog() {
         viewController?.routeToCatalog()
+    }
+    
+    internal func displayClient() {
+        viewController?.routeToClient()
+    }
+    
+    internal func displayEureka() {
+        viewController?.routeToEureka()
     }
 }
 

@@ -36,8 +36,8 @@
                                     <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gPR-gl-bSo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54g-FI-j8V">
-                                <rect key="frame" x="123" y="165" width="129" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="54g-FI-j8V">
+                                <rect key="frame" x="123" y="165" width="129" height="42.666666666666657"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="TableView">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T1c-MW-rzr">
-                                <rect key="frame" x="107.33333333333333" y="249.99999999999997" width="160.33333333333337" height="42.666666666666657"/>
+                                <rect key="frame" x="107.33333333333333" y="249.66666666666663" width="160.33333333333337" height="43"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Contacts List">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AL-ya-TBo">
-                                <rect key="frame" x="135.33333333333334" y="384.66666666666669" width="104.33333333333334" height="43"/>
+                                <rect key="frame" x="135.33333333333334" y="384.66666666666669" width="104.33333333333334" height="42.666666666666686"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Catalog">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
@@ -66,16 +66,35 @@
                                     <action selector="catalogButtonpressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EWA-Rd-Wda"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrr-AG-6Jh">
+                                <rect key="frame" x="141" y="500" width="93" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Client"/>
+                                <connections>
+                                    <action selector="clientButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pet-MJ-NhQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbv-es-fuG">
+                                <rect key="frame" x="149.66666666666666" y="726" width="76" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Eureka"/>
+                                <connections>
+                                    <action selector="eurekaButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uav-KI-o5v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         <constraints>
                             <constraint firstItem="JBd-iA-1VZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="198" id="CPJ-6u-jdb"/>
                             <constraint firstItem="54g-FI-j8V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DAF-fY-6T8"/>
+                            <constraint firstItem="Rbv-es-fuG" firstAttribute="top" secondItem="AFL-mF-yPF" secondAttribute="bottom" constant="35" id="Fdb-0k-wQY"/>
+                            <constraint firstItem="JBd-iA-1VZ" firstAttribute="top" secondItem="Hrr-AG-6Jh" secondAttribute="bottom" constant="52" id="JWo-6p-XDX"/>
                             <constraint firstItem="1AL-ya-TBo" firstAttribute="centerX" secondItem="T1c-MW-rzr" secondAttribute="centerX" id="PSz-x6-F1x"/>
                             <constraint firstItem="AFL-mF-yPF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="SCJ-8j-QUw"/>
                             <constraint firstItem="54g-FI-j8V" firstAttribute="top" secondItem="SaT-7P-kQV" secondAttribute="bottom" constant="83" id="Zkn-ql-czk"/>
                             <constraint firstItem="JBd-iA-1VZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bz8-yz-FNe"/>
+                            <constraint firstItem="Hrr-AG-6Jh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="141" id="mc9-tl-DDw"/>
                             <constraint firstItem="T1c-MW-rzr" firstAttribute="top" secondItem="54g-FI-j8V" secondAttribute="bottom" constant="42" id="nyA-yL-gpc"/>
                             <constraint firstItem="T1c-MW-rzr" firstAttribute="centerX" secondItem="54g-FI-j8V" secondAttribute="centerX" id="oG9-Gm-ELl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1AL-ya-TBo" secondAttribute="trailing" constant="135.33333333333334" id="otH-0r-YSf"/>
@@ -84,7 +103,9 @@
                             <constraint firstItem="54g-FI-j8V" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="165" id="syP-bn-xbJ"/>
                             <constraint firstItem="54g-FI-j8V" firstAttribute="centerX" secondItem="SaT-7P-kQV" secondAttribute="centerX" id="tHO-cG-b0Y"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AFL-mF-yPF" secondAttribute="bottom" constant="87" id="usJ-B3-MwL"/>
+                            <constraint firstItem="Rbv-es-fuG" firstAttribute="centerX" secondItem="AFL-mF-yPF" secondAttribute="centerX" id="x7i-06-REF"/>
                             <constraint firstItem="54g-FI-j8V" firstAttribute="centerX" secondItem="AFL-mF-yPF" secondAttribute="centerX" id="yrF-bJ-0cq"/>
+                            <constraint firstItem="Hrr-AG-6Jh" firstAttribute="centerX" secondItem="JBd-iA-1VZ" secondAttribute="centerX" id="zpT-y1-ZsZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -93,6 +114,8 @@
                         <segue destination="ydJ-2o-Jyi" kind="show" identifier="tableViewSegue" id="Vpf-8J-5QL"/>
                         <segue destination="RmY-bh-uvk" kind="presentation" identifier="tableViewSegue2" modalPresentationStyle="fullScreen" id="Hi1-CZ-iDK"/>
                         <segue destination="cz4-1S-CTV" kind="presentation" identifier="routeToCatalogSegue" id="HMH-U6-Alf"/>
+                        <segue destination="Okm-qq-5ka" kind="show" identifier="clientSegue" id="2Gp-l8-EwE"/>
+                        <segue destination="top-rE-ZkQ" kind="show" identifier="toEurekaSegue" id="S1d-ln-pdS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -138,6 +161,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnn-m2-aRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="678" y="116"/>
+        </scene>
+        <!--Client-->
+        <scene sceneID="byk-dG-Iry">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="clientID" storyboardName="Client" id="Okm-qq-5ka" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kpc-Jt-o17"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zsa-2z-Rtc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="244"/>
+        </scene>
+        <!--Eureka-->
+        <scene sceneID="s68-xq-zY3">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="eurekaID" storyboardName="Eureka" id="top-rE-ZkQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8Rc-Tc-ng4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FQi-1I-Qfa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="444"/>
         </scene>
     </scenes>
     <resources>

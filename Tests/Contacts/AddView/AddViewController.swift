@@ -78,7 +78,7 @@ class AddViewController: UIViewController, IAddViewDisplayLogic, UITableViewDele
             self.present(alert, animated: true, completion: nil)
         } else {
             if editMode == true {
-                guard let sectionGuarded = Section(rawValue: section) else { return }
+                guard let sectionGuarded = ContactSection(rawValue: section) else { return }
                 viewController?.editedContact = Contact(name: name, email: email, number: number, section: sectionGuarded)
             } else {
                 callback?([name, email, number, section])

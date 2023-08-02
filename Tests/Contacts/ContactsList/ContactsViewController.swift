@@ -1,17 +1,17 @@
 import UIKit
 
 protocol ContactsDisplayLogic: AnyObject {
-    var dataSource: UITableViewDiffableDataSource<Section, Contact> { get set }
+    var dataSource: UITableViewDiffableDataSource<ContactSection, Contact> { get set }
     var editedContact: Contact? { get set }
     var selectedPath: IndexPath? { get set }
-    var selectedSection: Section? { get set }
+    var selectedSection: ContactSection? { get set }
     var editMode: Bool { get set }
     var contacts: ContactList? { get set }
     var contactsList: [Contact]? { get set }
     func routeToDetail()
     func routeToAdd()
     func update(with list: ContactList, animate: Bool)
-    func makeDataSource() -> UITableViewDiffableDataSource<Section, Contact>
+    func makeDataSource() -> UITableViewDiffableDataSource<ContactSection, Contact>
     func handleAddSegue(segue: UIStoryboardSegue)
     func handleDetailSegue(segue: UIStoryboardSegue)
 }
@@ -28,7 +28,7 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
     internal lazy var dataSource = makeDataSource()
     
     internal var selectedPath: IndexPath?
-    internal var selectedSection: Section?
+    internal var selectedSection: ContactSection?
     internal var editMode: Bool = false
     internal var editedContact: Contact?
     internal var contacts: ContactList?
@@ -62,7 +62,7 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
     
     // MARK: - DiffableDataSource
     
-    func makeDataSource() -> UITableViewDiffableDataSource<Section, Contact> {
+    func makeDataSource() -> UITableViewDiffableDataSource<ContactSection, Contact> {
         return UITableViewDiffableDataSource(
             tableView: contactsTableView,
             cellProvider: {  tableView, indexPath, contact in
@@ -107,7 +107,7 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
         guard let name = contactsList?[index].name else { return UISwipeActionsConfiguration.init(actions: [deleteAction]) }
         guard let email = contactsList?[index].email else { return UISwipeActionsConfiguration(actions: [deleteAction]) }
         guard let number = contactsList?[index].number else { return UISwipeActionsConfiguration(actions: [deleteAction]) }
-        guard let section: Section = contactsList?[index].section else { return UISwipeActionsConfiguration(actions: [deleteAction]) }
+        guard let section: ContactSection = contactsList?[index].section else { return UISwipeActionsConfiguration(actions: [deleteAction]) }
         
         editedContact = Contact(name: name, email: email, number: number, section: section)
         
@@ -139,8 +139,8 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
     }
     
     func update(with list: ContactList, animate: Bool = true) {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, Contact>()
-        snapshot.appendSections(Section.allCases)
+        var snapshot = NSDiffableDataSourceSnapshot<ContactSection, Contact>()
+        snapshot.appendSections(ContactSection.allCases)
         snapshot.appendItems(list.friends, toSection: .friends)
         snapshot.appendItems(list.colleagues, toSection: .colleagues)
         snapshot.appendItems(list.family, toSection: .family)
@@ -180,7 +180,7 @@ class ContactsViewController: UIViewController, ContactsDisplayLogic, UITableVie
         addView?.editMode = editMode
         addView!.callback = { item in
             var snapshot = self.dataSource.snapshot()
-            snapshot.appendItems([.init(name: item[0], email: item[1], number: item[2], section: Section(rawValue: item[3])!)], toSection: Section.withLabel(item[3]))
+            snapshot.appendItems([.init(name: item[0], email: item[1], number: item[2], section: ContactSection(rawValue: item[3])!)], toSection: ContactSection.withLabel(item[3]))
             self.dataSource.apply(snapshot)
             self.navigationController?.popViewController(animated: true)
         }

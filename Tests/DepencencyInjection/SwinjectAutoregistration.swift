@@ -8,7 +8,7 @@ var assembler: Assembler!
 extension SwinjectStoryboard {
     @objc class func setup() {
 
-        let assemblies: [Assembly] = [VC1Assembly(), VC2Assembly(), VC3Assembly(), ContactsAssembly(), DetailViewAssembly(), AddViewAssembly(), CatalogAssembly(), CatalogDetailAssembly(), CatalogAddAssembly()]
+        let assemblies: [Assembly] = [VC1Assembly(), VC2Assembly(), VC3Assembly(), ContactsAssembly(), DetailViewAssembly(), AddViewAssembly(), CatalogAssembly(), CatalogDetailAssembly(), CatalogAddAssembly(), ClientAssembly(), EurekaAssembly()]
 
         assembler = Assembler(assemblies)
 
@@ -21,6 +21,8 @@ extension SwinjectStoryboard {
         CatalogConfigurator.setup(container: defaultContainer)
         CatalogDetailConfigurator.setup(container: defaultContainer)
         CatalogAddConfigurator.setup(container: defaultContainer)
+        ClientConfigurator.setup(container: defaultContainer)
+        EurekaConfigurator.setup(container: defaultContainer)
     }
 }
 

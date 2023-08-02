@@ -17,7 +17,7 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
     var imagePicker = UIImagePickerController()
     
     var selectedContact: Contact?
-    var selectedSection: Section?
+    var selectedSection: ContactSection?
     
     var tableDetailCells: [Int] = [1, 2, 3, 4]
     

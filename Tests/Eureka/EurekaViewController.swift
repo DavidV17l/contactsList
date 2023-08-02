@@ -3,13 +3,14 @@ import Eureka
 
 protocol IEurekaDisplayLogic: AnyObject {}
 
-class EurekaViewController: UIViewController, IEurekaDisplayLogic {
+class EurekaViewController: FormViewController, IEurekaDisplayLogic {
     
     //MARK: - Variables
     var interactor: IEurekaBusinessLogic?
     var router: (NSObjectProtocol & IEurekaRoutingLogic & IEurekaDataPassing)?
     
-    var form: Form = Form()
+    var datas: [String] = []
+    var third: Bool = false
     
     //MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -22,24 +23,80 @@ class EurekaViewController: UIViewController, IEurekaDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        form +++ Section("Section1")
-        <<< TextRow(){ row in
-            row.title = "Text Row"
-            row.placeholder = "Enter text here"
+        navigationItem.rightBarButtonItem = .init(title: "Done", style: .plain, target: self, action: #selector(getDatas))
+        form +++ Eureka.Section("Base informations")
+        <<< TextRow(){
+            $0.tag = "0"
+            $0.title = "Title"
+            $0.placeholder = "Type here..."
         }
-        <<< PhoneRow(){
-            $0.title = "Phone Row"
-            $0.placeholder = "And numbers here"
+        <<< TextRow(){
+            $0.tag = "1"
+            $0.title = "Image name"
+            $0.placeholder = "Type here... (test)"
         }
-        +++ Section("Section2")
-        <<< DateRow(){
-            $0.title = "Date Row"
-            $0.value = Date(timeIntervalSinceReferenceDate: 0)
+        +++ Eureka.Section("First info")
+        <<< TextRow(){
+            $0.tag = "2"
+            $0.title = "Description"
+            $0.placeholder = "Type here..."
+        }
+        <<< TextRow(){
+            $0.tag = "3"
+            $0.title = "Specific Detail"
+            $0.placeholder = "Type here..."
+        }
+        +++ Eureka.Section("Secondo info")
+        <<< TextRow(){
+            $0.tag = "4"
+            $0.title = "Description"
+            $0.placeholder = "Type here..."
+        }
+        <<< TextRow(){
+            $0.tag = "5"
+            $0.title = "Specific Detail"
+            $0.placeholder = "Type here..."
+        }
+        +++ Eureka.Section("Options")
+        <<< SwitchRow("switchTag"){
+            $0.title = "Insert third info (optional)"
+            self.third = $0.value ?? false
+        }
+        +++ Eureka.Section("Third info") {
+            $0.hidden = Condition.function(["switchTag"], { form in
+                return !((form.rowBy(tag: "switchTag") as? SwitchRow)?.value ?? false)
+            })
+        }
+        <<< TextRow(){
+            $0.tag = "6"
+            $0.title = "Description"
+            $0.placeholder = "Type here..."
+        }
+        <<< TextRow(){
+            $0.tag = "7"
+            $0.title = "Specific Detail"
+            $0.placeholder = "Type here..."
         }
     }
     
     //MARK: - Routing
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.router?.prepare(for: segue, sender: sender)
+    }
+    
+    @objc func getDatas() {
+        if third == false {
+            for i in 0...5 {
+                let row: TextRow? = form.rowBy(tag: "\(i)")
+                guard let value = row?.value else { break }
+                self.datas.append(value)
+            }
+        } else {
+            for i in 0...7 {
+                let row: TextRow? = form.rowBy(tag: "\(i)")
+                guard let value = row?.value else { break }
+                self.datas.append(value)
+            }
+        }
     }
 }

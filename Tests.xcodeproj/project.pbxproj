@@ -13,7 +13,6 @@
 		6B46E8E72A7A816300E4EAB6 /* EurekaRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8E32A7A816300E4EAB6 /* EurekaRouter.swift */; };
 		6B46E8E82A7A816300E4EAB6 /* EurekaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8E42A7A816300E4EAB6 /* EurekaViewController.swift */; };
 		6B46E8E92A7A816300E4EAB6 /* EurekaInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8E52A7A816300E4EAB6 /* EurekaInteractor.swift */; };
-		6B46E8EB2A7A816F00E4EAB6 /* EurekaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8EA2A7A816F00E4EAB6 /* EurekaModels.swift */; };
 		6B46E8ED2A7A840000E4EAB6 /* Eureka.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B46E8EC2A7A840000E4EAB6 /* Eureka.storyboard */; };
 		6B5B935A2A5EAC8100C56835 /* Catalog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5B93592A5EAC8100C56835 /* Catalog.storyboard */; };
 		6B5B93602A5EAF9200C56835 /* CatalogConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B935C2A5EAF9200C56835 /* CatalogConfiguration.swift */; };
@@ -100,7 +99,6 @@
 		6B46E8E32A7A816300E4EAB6 /* EurekaRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaRouter.swift; sourceTree = "<group>"; };
 		6B46E8E42A7A816300E4EAB6 /* EurekaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaViewController.swift; sourceTree = "<group>"; };
 		6B46E8E52A7A816300E4EAB6 /* EurekaInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaInteractor.swift; sourceTree = "<group>"; };
-		6B46E8EA2A7A816F00E4EAB6 /* EurekaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaModels.swift; sourceTree = "<group>"; };
 		6B46E8EC2A7A840000E4EAB6 /* Eureka.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Eureka.storyboard; sourceTree = "<group>"; };
 		6B5B93592A5EAC8100C56835 /* Catalog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catalog.storyboard; sourceTree = "<group>"; };
 		6B5B935C2A5EAF9200C56835 /* CatalogConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogConfiguration.swift; sourceTree = "<group>"; };
@@ -229,7 +227,6 @@
 				6B46E8E32A7A816300E4EAB6 /* EurekaRouter.swift */,
 				6B46E8E42A7A816300E4EAB6 /* EurekaViewController.swift */,
 				6B46E8E52A7A816300E4EAB6 /* EurekaInteractor.swift */,
-				6B46E8EA2A7A816F00E4EAB6 /* EurekaModels.swift */,
 				6B46E8EC2A7A840000E4EAB6 /* Eureka.storyboard */,
 			);
 			path = Eureka;
@@ -714,7 +711,6 @@
 				6BE03EBE2A4C1AB700484E91 /* VC3ViewController.swift in Sources */,
 				6B5B93712A5EE13700C56835 /* CatalogDetailConfiguration.swift in Sources */,
 				6B8475442A45953600EBA41A /* SceneDelegate.swift in Sources */,
-				6B46E8EB2A7A816F00E4EAB6 /* EurekaModels.swift in Sources */,
 				6B6CEE542A541AEA00935DB5 /* AddViewInteractor.swift in Sources */,
 				6BDF9D892A77B57800AD05A4 /* ClientInteractor.swift in Sources */,
 				6B2DAD882A557D2B0013453F /* AddCell.swift in Sources */,

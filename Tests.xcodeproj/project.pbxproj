@@ -14,6 +14,10 @@
 		6B46E8E82A7A816300E4EAB6 /* EurekaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8E42A7A816300E4EAB6 /* EurekaViewController.swift */; };
 		6B46E8E92A7A816300E4EAB6 /* EurekaInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8E52A7A816300E4EAB6 /* EurekaInteractor.swift */; };
 		6B46E8ED2A7A840000E4EAB6 /* Eureka.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B46E8EC2A7A840000E4EAB6 /* Eureka.storyboard */; };
+		6B46E8EF2A7B87CA00E4EAB6 /* EurekaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8EE2A7B87CA00E4EAB6 /* EurekaModels.swift */; };
+		6B46E8F32A7B882F00E4EAB6 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8F12A7B882F00E4EAB6 /* CustomCell.swift */; };
+		6B46E8F42A7B882F00E4EAB6 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B46E8F22A7B882F00E4EAB6 /* CustomCell.xib */; };
+		6B46E8F62A7B897C00E4EAB6 /* CustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B46E8F52A7B897C00E4EAB6 /* CustomRow.swift */; };
 		6B5B935A2A5EAC8100C56835 /* Catalog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B5B93592A5EAC8100C56835 /* Catalog.storyboard */; };
 		6B5B93602A5EAF9200C56835 /* CatalogConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B935C2A5EAF9200C56835 /* CatalogConfiguration.swift */; };
 		6B5B93612A5EAF9200C56835 /* CatalogRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5B935D2A5EAF9200C56835 /* CatalogRouter.swift */; };
@@ -100,6 +104,10 @@
 		6B46E8E42A7A816300E4EAB6 /* EurekaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaViewController.swift; sourceTree = "<group>"; };
 		6B46E8E52A7A816300E4EAB6 /* EurekaInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaInteractor.swift; sourceTree = "<group>"; };
 		6B46E8EC2A7A840000E4EAB6 /* Eureka.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Eureka.storyboard; sourceTree = "<group>"; };
+		6B46E8EE2A7B87CA00E4EAB6 /* EurekaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EurekaModels.swift; sourceTree = "<group>"; };
+		6B46E8F12A7B882F00E4EAB6 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		6B46E8F22A7B882F00E4EAB6 /* CustomCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		6B46E8F52A7B897C00E4EAB6 /* CustomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRow.swift; sourceTree = "<group>"; };
 		6B5B93592A5EAC8100C56835 /* Catalog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Catalog.storyboard; sourceTree = "<group>"; };
 		6B5B935C2A5EAF9200C56835 /* CatalogConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogConfiguration.swift; sourceTree = "<group>"; };
 		6B5B935D2A5EAF9200C56835 /* CatalogRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogRouter.swift; sourceTree = "<group>"; };
@@ -223,6 +231,7 @@
 		6B46E8E12A7A814B00E4EAB6 /* Eureka */ = {
 			isa = PBXGroup;
 			children = (
+				6B46E8F02A7B87FF00E4EAB6 /* CustomRow */,
 				6B46E8E22A7A816300E4EAB6 /* EurekaConfiguration.swift */,
 				6B46E8E32A7A816300E4EAB6 /* EurekaRouter.swift */,
 				6B46E8E42A7A816300E4EAB6 /* EurekaViewController.swift */,
@@ -230,6 +239,17 @@
 				6B46E8EC2A7A840000E4EAB6 /* Eureka.storyboard */,
 			);
 			path = Eureka;
+			sourceTree = "<group>";
+		};
+		6B46E8F02A7B87FF00E4EAB6 /* CustomRow */ = {
+			isa = PBXGroup;
+			children = (
+				6B46E8F52A7B897C00E4EAB6 /* CustomRow.swift */,
+				6B46E8F12A7B882F00E4EAB6 /* CustomCell.swift */,
+				6B46E8F22A7B882F00E4EAB6 /* CustomCell.xib */,
+				6B46E8EE2A7B87CA00E4EAB6 /* EurekaModels.swift */,
+			);
+			path = CustomRow;
 			sourceTree = "<group>";
 		};
 		6B5B93582A5EAC6A00C56835 /* Catalog */ = {
@@ -629,6 +649,7 @@
 				6B8475652A45A66700EBA41A /* VC2.storyboard in Resources */,
 				6BDF9D932A790C0900AD05A4 /* ClientCell.xib in Resources */,
 				6BF0863C2A73D54500878067 /* CatalogAddCell.xib in Resources */,
+				6B46E8F42A7B882F00E4EAB6 /* CustomCell.xib in Resources */,
 				6BF086372A715A7000878067 /* CatalogDetailCell.xib in Resources */,
 				6B6CEE442A5419BC00935DB5 /* ContactsCell.xib in Resources */,
 				6B5B935A2A5EAC8100C56835 /* Catalog.storyboard in Resources */,
@@ -705,12 +726,14 @@
 				6B5B936A2A5EB3DB00C56835 /* CatalogCell.swift in Sources */,
 				6BDF9D8D2A77B95E00AD05A4 /* ClientModels.swift in Sources */,
 				6B9CA9862A5DA43700597309 /* DetailCell2.swift in Sources */,
+				6B46E8F62A7B897C00E4EAB6 /* CustomRow.swift in Sources */,
 				6B5B93742A5EE13700C56835 /* CatalogDetailInteractor.swift in Sources */,
 				6BE03ED02A4C486D00484E91 /* TableViewCell.swift in Sources */,
 				6B5B93662A5EB07800C56835 /* CatalogModels.swift in Sources */,
 				6BE03EBE2A4C1AB700484E91 /* VC3ViewController.swift in Sources */,
 				6B5B93712A5EE13700C56835 /* CatalogDetailConfiguration.swift in Sources */,
 				6B8475442A45953600EBA41A /* SceneDelegate.swift in Sources */,
+				6B46E8EF2A7B87CA00E4EAB6 /* EurekaModels.swift in Sources */,
 				6B6CEE542A541AEA00935DB5 /* AddViewInteractor.swift in Sources */,
 				6BDF9D892A77B57800AD05A4 /* ClientInteractor.swift in Sources */,
 				6B2DAD882A557D2B0013453F /* AddCell.swift in Sources */,
@@ -727,6 +750,7 @@
 				6B81686D2A6EE47000CBA303 /* CatalogAddRouter.swift in Sources */,
 				6B5B93722A5EE13700C56835 /* CatalogDetailRouter.swift in Sources */,
 				6B8475792A45CAA200EBA41A /* VC2Router.swift in Sources */,
+				6B46E8F32A7B882F00E4EAB6 /* CustomCell.swift in Sources */,
 				6B84757F2A45CD9800EBA41A /* VC1ViewController.swift in Sources */,
 				6BE03EDD2A4C5F2F00484E91 /* ContactsInteractor.swift in Sources */,
 				6B84756D2A45CA3900EBA41A /* VC1Router.swift in Sources */,

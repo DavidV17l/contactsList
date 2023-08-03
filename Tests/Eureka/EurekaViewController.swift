@@ -11,6 +11,7 @@ class EurekaViewController: FormViewController, IEurekaDisplayLogic {
     
     var datas: [String] = []
     var third: Bool = false
+    var custom: Bool = false
     
     //MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -76,6 +77,18 @@ class EurekaViewController: FormViewController, IEurekaDisplayLogic {
             $0.tag = "7"
             $0.title = "Specific Detail"
             $0.placeholder = "Type here..."
+        }
+        <<< SwitchRow("switchTagCustom"){
+            $0.title = "Insert custom row"
+            self.custom = $0.value ?? false
+        }
+        +++ Eureka.Section("Custom row") {
+            $0.hidden = Condition.function(["switchTagCustom"], { form in
+                return !((form.rowBy(tag: "switchTagCustom") as? SwitchRow)?.value ?? false)
+            })
+        }
+        <<< CustomRow(){
+            $0.value = User(name: "Davide", email: "test@test.com", dateOfBirth: "17/03/2003")
         }
     }
     

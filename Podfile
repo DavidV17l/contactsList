@@ -12,5 +12,6 @@ pod 'FirebaseFirestore'
 pod 'Firebase/Database'
 pod 'FirebaseFirestoreSwift'
 pod 'Eureka'
+pod 'PromiseKit'
 
 end
